@@ -32,7 +32,7 @@
 <body class="bg-light">
 
 <div class="container-fluid shadow p-3">
-	<button type="button" class="btn btn-default" aria-label="Left Align">
+	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
   		<i class="fas fa-chevron-left"></i>
 	</button>
 	<h1>쇼핑몰</h1>
