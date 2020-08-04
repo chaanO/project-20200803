@@ -21,5 +21,5 @@ public class ListArticleService {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
-	}
+	} 
 }

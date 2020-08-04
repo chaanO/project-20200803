@@ -23,3 +23,4 @@ public class ListArticleHandler implements CommandHandler{
 		return "/WEB-INF/view/listArticle.jsp";
 	}
 }
+ 

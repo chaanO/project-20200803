@@ -31,7 +31,7 @@ public class WriteArticleHandler implements CommandHandler{
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
 		return FORM_VIEW;
 	}
-	
+	 
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) {
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("erros", errors);

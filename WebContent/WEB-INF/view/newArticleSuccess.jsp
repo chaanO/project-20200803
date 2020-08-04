@@ -22,4 +22,4 @@
 	<a href="${ctxPath }/article/read.do?no=${newArticleNo}">게시글 내용</a>
 	
 </body>
-</html>
+</html> 

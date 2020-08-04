@@ -22,7 +22,7 @@ public class Article {
 	public Integer getNumber() {
 		return number;
 	}
-
+ 
 	public Writer getWriter() {
 		return writer;
 	}

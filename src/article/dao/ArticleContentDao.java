@@ -25,7 +25,7 @@ public class ArticleContentDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
-	
+	 
 	public ArticleContent selectById(Connection conn, int no) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

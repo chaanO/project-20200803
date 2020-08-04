@@ -16,6 +16,6 @@ public class Writer {
 	public String getName() {
 		return name;
 	}
-	
+	 
 	
 }

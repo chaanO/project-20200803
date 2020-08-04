@@ -26,7 +26,7 @@
 			<td>작성자</td>
 			<td>${articleData.article.writer.name }</td>
 		</tr>
-		<tr>
+		<tr> 
 			<td>제목</td>
 			<td><c:out value='${articleData.article.title}'></c:out></td>
 		</tr>
