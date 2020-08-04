@@ -3,7 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="${ctxPath }">쇼핑몰</a>
+  <a class="navbar-brand" href="${ctxPath }">중앙문고</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,13 +23,26 @@
         <a class="nav-link" href="#">자기계발</a>
       </li>
     </ul>
+    
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
     </form>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   	<div>
-   		로그인 로그아웃
-   	</div>
+    
+    <div class="navbar-nav ">
+		<c:if test="${not empty sessionScope.authUser }">
+			<a class="nav-link nav-item ${current.write }" href="${ctxPath }/article/write.do">작성</a>
+			
+			<a class="nav-link nav-item ${current.logout }" href="${ctxPath }/logout.do">로그아웃</a>
+			
+			<a class="nav-link nav-item ${current.changePwd }" href="${ctxPath }/changePwd.do">회원정보 수정</a>
+		</c:if>
+
+		<c:if test="${empty sessionScope.authUser }">
+			<a class="nav-link nav-item ${current.login }" href="${ctxPath }/shop/login.do">로그인</a>
+			
+			<a class="nav-link nav-item ${current.join }" href="${ctxPath }/shop/join.do">회원가입</a>
+		</c:if>
+	</div>
   </div>
 </nav>
