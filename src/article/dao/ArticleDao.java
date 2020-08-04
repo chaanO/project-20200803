@@ -35,7 +35,7 @@ public class ArticleDao {
 				if(rs.next()) {
 					Integer newNum = rs.getInt(1);
 					return new Article(newNum, article.getWriter(), article.getTitle(), article.getRegDate(), article.getModifiedDate(), 0);
-				}
+				} 
 			}
 			return null;
 		}finally {

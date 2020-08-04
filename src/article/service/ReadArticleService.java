@@ -31,5 +31,5 @@ public class ReadArticleService {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
-	}
+	} 
 }

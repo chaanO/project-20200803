@@ -26,7 +26,7 @@ public class WriteRequest {
 	public String getContent() {
 		return content;
 	}
-	
+	 
 	public void validate(Map<String, Boolean> errors) {
 		if(title == null || title.trim().isEmpty()) {
 			errors.put("title", Boolean.TRUE);

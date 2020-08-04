@@ -23,7 +23,7 @@
 <body>
 <h1>QnA</h1>
 	<table class="table">
-		<tr>
+		<tr> 
 			<td colspan="4"><a href="write.do">글쓰기</a></td>
 		</tr>
 		<thead class="thead-dark">

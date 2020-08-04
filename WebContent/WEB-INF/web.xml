@@ -24,7 +24,7 @@
   		maxTotal=30
   		poolName=shop
   	</param-value>
-  </context-param>
+  </context-param> 
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>util.CharacterEncodingFilter</filter-class>
