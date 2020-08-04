@@ -32,10 +32,10 @@
 <body class="bg-light">
 
 <div class="container-fluid shadow p-3">
-	<button type="button" class="btn btn-default" aria-label="Left Align">
+	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
   		<i class="fas fa-chevron-left"></i>
 	</button>
-	<h1>쇼핑몰</h1>
+	<h1>중앙문고</h1>
 	<h5>회원가입</h5>
 	<form action="join.do" method="post">	
 	  <div class="form-group">
@@ -59,7 +59,7 @@
 	    <input type="password" name="confirmPassword" class="form-control input-lg" id="InputconfirmPassword" placeholder="비밀번호 확인" value="${param.confirmPassword }" required>
 	    <small class="form-text text-muted">
 		    <c:if test="${errors.confirmPassword }">비밀번호 확인을 입력하세요.</c:if>
-			<c:if test="${errors.notMatch }">비밀번호와 일치하지 않습니다.</c:if>
+			<c:if test="${errors.notMatch }">비밀번호가 일치하지 않습니다.</c:if>
 		</small>
 	  </div>
 	  
