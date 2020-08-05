@@ -23,7 +23,7 @@
 	h1 {
 		text-align:center;
 	}
-	
+	 
 	h5 {
 		text-align:center;
 	}
@@ -40,7 +40,7 @@
 	<form action="join.do" method="post">	
 	  <div class="form-group">
 	    <label for="InputId">아이디</label>
-	    <input type="text" name="id" class="form-control input-lg" id="InputId" placeholder="아이디 입력(3~11자)" minlength="3" maxlength="11" value="${param.id }">
+	    <input type="text" name="id" class="form-control input-lg" id="InputId" placeholder="아이디 입력(5~11자)" minlength="5" maxlength="11" value="${param.id }">
         <small class="form-text text-muted">
 	        <c:if test="${errors.id }">ID를 입력하세요.</c:if>
 			<c:if test="${errors.duplicateId }">이미 사용중인 아이디입니다.</c:if>
@@ -59,7 +59,7 @@
 	    <input type="password" name="confirmPassword" class="form-control input-lg" id="InputconfirmPassword" placeholder="비밀번호 확인" value="${param.confirmPassword }" required>
 	    <small class="form-text text-muted">
 		    <c:if test="${errors.confirmPassword }">비밀번호 확인을 입력하세요.</c:if>
-			<c:if test="${errors.notMatch }">비밀번호와 일치하지 않습니다.</c:if>
+			<c:if test="${errors.notMatch }">비밀번호가 일치하지 않습니다.</c:if>
 		</small>
 	  </div>
 	  
