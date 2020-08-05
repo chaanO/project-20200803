@@ -24,7 +24,7 @@
   		maxTotal=30
   		poolName=shop
   	</param-value>
-  </context-param> 
+  </context-param>
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>util.CharacterEncodingFilter</filter-class>
@@ -49,14 +49,12 @@
     <servlet-name>ControllerUsingURI</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-  
   <filter>
-  	<filter-name>LoginCheckFilter</filter-name>
-  	<filter-class>filter.LoginCheckFilter</filter-class>
+    <filter-name>LoginCheckFilter</filter-name>
+    <filter-class>filter.LoginCheckFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>LoginCheckFilter</filter-name>
-  	<url-pattern>/changePwd.do</url-pattern>
-  	<url-pattern>/article/write.do</url-pattern>
+    <filter-name>LoginCheckFilter</filter-name>
+    <url-pattern>/changePwd.do</url-pattern>
   </filter-mapping>
 </web-app>
