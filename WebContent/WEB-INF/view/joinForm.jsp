@@ -40,7 +40,7 @@
 	<form action="join.do" method="post">	
 	  <div class="form-group">
 	    <label for="InputId">아이디</label>
-	    <input type="text" name="id" class="form-control input-lg" id="InputId" placeholder="아이디 입력(5~11자)" minlength="5" maxlength="11" value="${param.id }">
+	    <input type="text" name="id" class="form-control input-lg" id="InputId" placeholder="아이디 입력(3~11자)" minlength="3" maxlength="11" value="${param.id }">
         <small class="form-text text-muted">
 	        <c:if test="${errors.id }">ID를 입력하세요.</c:if>
 			<c:if test="${errors.duplicateId }">이미 사용중인 아이디입니다.</c:if>

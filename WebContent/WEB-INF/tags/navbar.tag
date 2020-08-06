@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="${ctxPath }/shop/main.jsp">중앙문고</a>
+  <a class="navbar-brand" href="${ctxPath }/main.jsp">중앙문고</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="bookpage1.jsp">시/에세이</a>
+        <a class="nav-link" href="${ctxPath }/bookpage1.jsp">시/에세이</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">소설</a>
@@ -35,15 +35,17 @@
          
          <a class="nav-link nav-item ${current.logout }" href="${ctxPath }/logout.do">로그아웃</a>
          
-         <a class="nav-link nav-item ${current.changePwd }" href="${ctxPath }/changePwd.do">회원정보 수정</a>
+         <a class="nav-link nav-item ${current.changePwd }" href="${ctxPath }/changeUser.do">회원정보 수정</a>
          
-         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/shop/article/list.do">고객센터</a>
+         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/article/list.do">고객센터</a>
       </c:if>
 
       <c:if test="${empty sessionScope.authUser }">
-         <a class="nav-link nav-item ${current.login }" href="${ctxPath }/shop/login.do">로그인</a>
+         <a class="nav-link nav-item ${current.login }" href="${ctxPath }/login.do">로그인</a>
          
-         <a class="nav-link nav-item ${current.join }" href="${ctxPath }/shop/join.do">회원가입</a>
+         <a class="nav-link nav-item ${current.join }" href="${ctxPath }/join.do">회원가입</a>
+         
+         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/article/list.do">고객센터</a>
       </c:if>
    </div>
   </div>

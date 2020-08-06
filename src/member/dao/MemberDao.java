@@ -42,6 +42,7 @@ public class MemberDao {
 		return date == null ? null : new Date(date.getTime());
 	}
 	
+	/* 회원가입(member table에 값 추가) */
 	public void insert(Connection conn, Member mem) throws SQLException {
 		try (PreparedStatement pstmt = conn.prepareStatement("INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?)")) {
 			pstmt.setString(1, mem.getId());
@@ -51,6 +52,18 @@ public class MemberDao {
 			pstmt.setString(5, mem.getAddress());
 			pstmt.setString(6, mem.getEmail());
 			pstmt.setTimestamp(7, new Timestamp(mem.getRegDate().getTime()));
+			pstmt.executeUpdate();
+		}
+	}
+	
+	/*회원정보 수정*/
+	public void update(Connection conn, Member member) throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement("UPDATE member SET password = ?, phone = ?, address = ?, email = ? WHERE memberId = ?")) {
+			pstmt.setString(1, member.getPassword());
+			pstmt.setString(2, member.getPhone());
+			pstmt.setString(3, member.getAddress());
+			pstmt.setString(4, member.getEmail());
+			pstmt.setString(5, member.getId());
 			pstmt.executeUpdate();
 		}
 	}
