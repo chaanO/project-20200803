@@ -1,5 +1,6 @@
 package article.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Article {
@@ -22,7 +23,7 @@ public class Article {
 	public Integer getNumber() {
 		return number;
 	}
- 
+
 	public Writer getWriter() {
 		return writer;
 	}
@@ -33,6 +34,10 @@ public class Article {
 
 	public Date getRegDate() {
 		return regDate;
+	}
+	
+	public String getRegDateCustom() {
+		return new SimpleDateFormat("yyyy-MM-dd").format(regDate);
 	}
 
 	public Date getModifiedDate() {

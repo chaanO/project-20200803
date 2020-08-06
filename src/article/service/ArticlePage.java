@@ -11,7 +11,7 @@ public class ArticlePage {
 	private int totalPages;
 	private int startPage;
 	private int endPage;
-	 
+	
 	public ArticlePage(int total, int cuttenPage, int size, List<Article> content) {
 		this.total = total;
 		this.currentPage = cuttenPage;

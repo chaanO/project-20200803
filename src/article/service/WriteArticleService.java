@@ -32,7 +32,7 @@ public class WriteArticleService {
 				throw new RuntimeException("fail to insert article_content");
 			}
 			conn.commit();
-			 
+			
 			return savedArticle.getNumber();
 		}catch(SQLException e) {
 			e.printStackTrace();

@@ -2,21 +2,25 @@ package article.service;
 
 import java.util.Map;
 
-import article.model.Writer;
-
-public class WriteRequest {
-	private Writer writer;
+public class ModifyRequest {
+	private String userId;
+	private int articleNumber;
 	private String title;
 	private String content;
 	
-	public WriteRequest(Writer writer, String title, String content) {
-		this.writer = writer;
+	public ModifyRequest(String userId, int articleNumber, String title, String content) {
+		this.userId = userId;
+		this.articleNumber = articleNumber;
 		this.title = title;
 		this.content = content;
 	}
 
-	public Writer getWriter() {
-		return writer;
+	public String getUserId() {
+		return userId;
+	}
+
+	public int getArticleNumber() {
+		return articleNumber;
 	}
 
 	public String getTitle() {

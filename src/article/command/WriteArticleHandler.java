@@ -31,10 +31,10 @@ public class WriteArticleHandler implements CommandHandler{
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
 		return FORM_VIEW;
 	}
-	 
+	
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) {
 		Map<String, Boolean> errors = new HashMap<>();
-		req.setAttribute("erros", errors);
+		req.setAttribute("errors", errors);
 		
 		User user = (User)req.getSession(false).getAttribute("authUser");
 		WriteRequest writeReq = createWriteRequest(user, req);
