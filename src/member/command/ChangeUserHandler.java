@@ -28,7 +28,7 @@ public class ChangeUserHandler implements CommandHandler{
 			return null;
 		}
 	}
-
+ 
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
 		return FORM_VIEW;
 	}

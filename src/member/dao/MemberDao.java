@@ -41,7 +41,7 @@ public class MemberDao {
 	private Date toDate(Timestamp date) {
 		return date == null ? null : new Date(date.getTime());
 	}
-	
+	 
 	/* 회원가입(member table에 값 추가) */
 	public void insert(Connection conn, Member mem) throws SQLException {
 		try (PreparedStatement pstmt = conn.prepareStatement("INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?)")) {
