@@ -12,31 +12,11 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-<title>회원가입 완료</title>
-<style>
-	.container-fluid {
-		background-color:white;
-		width:400px;
-	}
-	
-	h4 {
-		text-align:center;
-	}
-</style>
+<title>회원정보 수정 완료</title>
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container-fluid shadow p-3">
-   	<form>
-	  	<div class="form-group">
-		    <h4>회원가입 완료.</h2>
-	  	</div>
-	  	<br />
-	  	<br />
-	  	<br />
- 		<button type="button" class="btn btn-dark btn-lg btn-block" onclick="location='${ctxPath}/main.jsp'">확인</button>
-	</form>
-</div>
+회원정보를 변경했습니다.
 
 </body>
-</html>
+</html> 

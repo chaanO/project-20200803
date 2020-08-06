@@ -34,9 +34,6 @@
 <body class="bg-light">
 
 <div class="container-fluid shadow p-3">
-	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
-  		<i class="fas fa-chevron-left"></i>
-	</button>
 <h1>중앙문고</h1>
 <h5>게시글 작성 완료</h5>
 <form action="login.do" method="post">

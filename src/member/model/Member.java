@@ -29,11 +29,9 @@ public class Member {
 		return password;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public String getPhone() {
 		return phone;
@@ -53,5 +51,13 @@ public class Member {
 	
 	public boolean matchPassword(String pwd) {
 		return password.contentEquals(pwd);
+	}
+	
+	/* 수정할 회원 정보 */
+	public void changeUser(String newPwd, String newPhone, String newAddr, String newEmail) {
+		this.password = newPwd;
+		this.phone = newPhone;
+		this.address = newAddr;
+		this.email = newEmail;
 	}
 }

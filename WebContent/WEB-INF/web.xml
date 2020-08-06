@@ -12,6 +12,9 @@
   <listener>
     <listener-class>jdbc.DBCPInitListener</listener-class>
   </listener>
+  <listener>
+  	<listener-class>util.AddContextPathListener</listener-class>
+  </listener>
   <context-param>
     <param-name>poolConfig</param-name>
     <param-value>
@@ -60,5 +63,6 @@
   	<url-pattern>/article/write.do</url-pattern>
   	<url-pattern>/article/modify.do</url-pattern>
   	<url-pattern>/article/delete.do</url-pattern>
+  	<url-pattern>/article/list.do</url-pattern>
   </filter-mapping>
 </web-app>
