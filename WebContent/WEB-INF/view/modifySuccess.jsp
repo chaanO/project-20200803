@@ -19,4 +19,5 @@
 <body>
 게시글을 수정했습니다. alert로 바꾸기
 </body>
-</html>
+</html> 
+
