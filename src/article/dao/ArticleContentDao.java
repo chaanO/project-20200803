@@ -16,6 +16,7 @@ public class ArticleContentDao {
 			pstmt.setLong(1, content.getNumber());
 			pstmt.setString(2, content.getContent());
 			int insertedCount = pstmt.executeUpdate();
+			
 			if(insertedCount > 0) {
 				return content;
 			}else {
@@ -25,7 +26,7 @@ public class ArticleContentDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
-	 
+	
 	public ArticleContent selectById(Connection conn, int no) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -40,6 +41,21 @@ public class ArticleContentDao {
 			return content;
 		}finally {
 			JdbcUtil.close(rs, pstmt);
+		}
+	}
+	
+	public int update(Connection conn, int no, String content) throws SQLException {
+		try(PreparedStatement pstmt = conn.prepareStatement("update article_content set content = ? where article_no=?")){
+			pstmt.setString(1, content);
+			pstmt.setInt(2, no);
+			return pstmt.executeUpdate();
+		}
+	}
+	
+	public int delete(Connection conn, int no) throws SQLException {
+		try(PreparedStatement pstmt = conn.prepareStatement("delete from article_content where article_no = ?")){
+			pstmt.setInt(1, no);
+			return pstmt.executeUpdate();
 		}
 	}
 }

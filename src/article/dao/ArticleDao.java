@@ -35,7 +35,7 @@ public class ArticleDao {
 				if(rs.next()) {
 					Integer newNum = rs.getInt(1);
 					return new Article(newNum, article.getWriter(), article.getTitle(), article.getRegDate(), article.getModifiedDate(), 0);
-				} 
+				}
 			}
 			return null;
 		}finally {
@@ -111,6 +111,21 @@ public class ArticleDao {
 		try(PreparedStatement pstmt = conn.prepareStatement("update article set read_cnt = read_cnt + 1 where article_no = ?")) {
 			pstmt.setInt(1, no);
 			pstmt.executeUpdate();
+		}
+	}
+	
+	public int update(Connection conn, int no, String title) throws SQLException {
+		try(PreparedStatement pstmt = conn.prepareStatement("update article set title =?, moddate = now() where article_no = ?")){
+			pstmt.setString(1, title);
+			pstmt.setInt(2, no);
+			return pstmt.executeUpdate();
+		}
+	}
+	
+	public int delete(Connection conn, int no) throws SQLException {
+		try(PreparedStatement pstmt = conn.prepareStatement("delete from article where article_no = ?")){
+			pstmt.setInt(1, no);
+			return pstmt.executeUpdate();
 		}
 	}
 }
