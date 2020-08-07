@@ -30,6 +30,7 @@ public class CartDao {
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
+			JdbcUtil.close(conn);
 		}
 	}
 	
@@ -54,6 +55,7 @@ public class CartDao {
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(stmt);
+			JdbcUtil.close(conn);
 		}
 	}
 	
@@ -65,14 +67,56 @@ public class CartDao {
 		try {
 			String sql = "INSERT INTO cart VALUE (?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, cart.getCartId());
-			pstmt.setInt(2, cart.getBookId());
-			pstmt.setInt(3, cart.getAmount());
+			pstmt.setInt(1, cart.getBookId());
+			pstmt.setInt(2, cart.getAmount());
+			pstmt.setString(3, cart.getMemberId());
 			rst = pstmt.executeUpdate();
 			
 			return rst;
 		} finally {
 			JdbcUtil.close(pstmt);
+			JdbcUtil.close(conn);
+		}
+	}
+	
+	public int uptCart(Cart cart) throws SQLException {
+		int rst = 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Connection conn = ConnectionProvider.getConnection();
+		
+		try {
+			String sql = "UPDATE cart SET amount = ? WHERE bookId = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, cart.getAmount());
+			pstmt.setInt(2, cart.getBookId());
+			
+			rst = pstmt.executeUpdate();
+			
+			return rst;
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+			JdbcUtil.close(conn);
+		}
+	}
+	
+	public int delCart(int bookId) throws SQLException {
+		int rst = 0;
+		PreparedStatement pstmt = null;
+		Connection conn = ConnectionProvider.getConnection();
+		
+		try {
+			String sql = "DELETE FROM cart WHERE bookId = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bookId);
+			
+			rst = pstmt.executeUpdate();
+			
+			return rst;
+		} finally {
+			JdbcUtil.close(pstmt);
+			JdbcUtil.close(conn);
 		}
 	}
 }
