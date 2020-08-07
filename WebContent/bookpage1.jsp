@@ -3,6 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
+<%@page import="cart.dao.ProductDao"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="cart.model.Product"%>
+
+<%
+	ProductDao pDao = new ProductDao();
+	ArrayList<Product> result = pDao.getListProduct();
+	session.setAttribute("result", result);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +34,64 @@
 </style>
 </head>
 <body>
-
 <my:navbar />
 
-<h3>시</h3>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">시</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+      	<img onclick="location.href='buy.jsp'" class="btn" src="images/누구나 시 하나쯤 가슴에 품고 산다.jpg" height="200">
+ 			<p>
+			   	<small style="text-align:center">
+			    	<a href="buy.jsp?no=${0 }"><strong>${result[0].bookName }</strong></a> <br />
+			    	<%--
+			    	<a href="buy.jsp"><strong><%= result.get(0).getBookName() %></strong></a> <br />
+			    	 --%>
+			    	
+			    	
+			    	김서경 저 | 메이븐 | 2019.07.01 <br />
+			    	가격 : ${result[0].price }원
+			   	</small>
+   			</p>
+      </td>
+      <td>
+      	<img onclick="location.href='buy.jsp'" class="btn" src="images/육아가 한 편의 시라면 좋겠지만.jpg" height="200">
+ 			<p>
+			   	<small style="text-align:center">
+			    	<a href="buy.jsp?no=${1 }"><strong>${result[1].bookName }</strong></a> <br />
+			    	전지민 저 | 비타북스 | 2020.03.02 <br />
+			    	가격 : ${result[1].price }원
+			   	</small>
+   			</p>
+      </td>
+      <td>@mdo</td>
+    </tr>
+    <thead>
+    <tr>
+      <th scope="col">에세이</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- <h3>시</h3>
 <div class="container">
  <img onclick="location.href='buy.jsp'" class="btn" src="images/누구나 시 하나쯤 가슴에 품고 산다.jpg" height="200">
  	<p>
@@ -38,6 +101,6 @@
 	    	가격 : 13,500원
 	   	</small>
    	</p>
-</div>
+</div> -->
 </body>
 </html>

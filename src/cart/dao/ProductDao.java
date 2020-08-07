@@ -53,6 +53,7 @@ public class ProductDao {
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(stmt);
+			JdbcUtil.close(conn);
 		}
 	}
 }
