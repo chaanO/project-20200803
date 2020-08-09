@@ -27,7 +27,7 @@
 		
 	.btn {cursor:pointer;}
 	
-	 a:link { color: red; text-decoration: none;}
+	 a:link { color: black; text-decoration: none;}
 	 a:visited { color: black; text-decoration: none;}
 	 a:hover { color: black; text-decoration: underline;}
 	 
@@ -48,7 +48,7 @@
   <tbody>
     <tr>
       <td>
-      	<img onclick="location.href='buy.jsp'" class="btn" src="images/누구나 시 하나쯤 가슴에 품고 산다.jpg" height="200">
+      	<img onclick="location.href='buy.jsp?no=${0}'" class="btn" src="${result[0].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${0 }"><strong>${result[0].bookName }</strong></a> <br />
@@ -58,12 +58,12 @@
 			    	
 			    	
 			    	김서경 저 | 메이븐 | 2019.07.01 <br />
-			    	가격 : ${result[0].price }원
+			    	가격 : ${result[1].price }원
 			   	</small>
    			</p>
       </td>
       <td>
-      	<img onclick="location.href='buy.jsp'" class="btn" src="images/육아가 한 편의 시라면 좋겠지만.jpg" height="200">
+      	<img onclick="location.href='buy.jsp?no=${1}'" class="btn" src="${result[1].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${1 }"><strong>${result[1].bookName }</strong></a> <br />

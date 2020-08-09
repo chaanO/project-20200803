@@ -24,15 +24,30 @@
 </script>
 </head>
 <body>
-<%
-
-//	ProductDao pDao = new ProductDao();
-//	ArrayList<Product> result = pDao.getListProduct();
-%>
 
 <my:navbar />
 
 <div class="container">
+<form action="cart.do" method="post">
+<img src="${result[param.no].image }" height="200" style="float:left; margin-right: 20px; margin-top: 10px; margin-left:20px">
+	<div class="jumbotron">
+	  <h1 class="display-5">도서 구매</h1>
+	  <p class="lead"><input type="hidden" name="bookName" value="${result[param.no].bookName }">제목 : ${result[param.no].bookName } </p>
+	  <p class="lead"><input type="hidden" name="price" value="${result[param.no].price }">가격 : ${result[param.no].price }원</p>
+	  <input type="hidden" name="memberId" value="${authUser.id }">
+	  <hr class="my-4">
+	  <div class="form-group">
+	    <label for="Amount">수량</label>
+	    <input type="text" name="amount" class="form-control" id="Amount">
+      </div>
+	  <input type="submit" value="장바구니 담기">
+	  <input type="button" value="바로결제">
+	</div>
+</form>
+</div>
+
+<%-- <div class="container">
+<img src="${result[param.no].image }" height="200" style="float:left; margin-right: 20px; margin-top: 10px; margin-left:20px">
 	<div class="jumbotron">
 	  <h1 class="display-5">도서 구매</h1>
 	  <p class="lead">제목 : ${result[param.no].bookName }</p>
@@ -42,10 +57,10 @@
 	    <label for="Amount">수량</label>
 	    <input type="text" name="amount" class="form-control" id="Amount">
       </div>
-	  <a class="btn btn-primary btn-lg" href="#" role="submit"  data-toggle="modal" data-target="#staticBackdrop">장바구니 담기</a>
+	  <a class="btn btn-primary btn-lg" href="/cart.do" role="submit"  data-toggle="modal" data-target="#staticBackdrop">장바구니 담기</a>
 	  <a class="btn btn-primary btn-lg" href="#" role="button">바로 결제</a>
 	</div>
-</div>
+</div> --%>
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

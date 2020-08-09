@@ -47,6 +47,7 @@ public class ProductDao {
 				pro.setBookId(rs.getInt("bookId"));
 				pro.setBookName(rs.getString("bookName"));
 				pro.setPrice(rs.getInt("price"));
+				pro.setImage(rs.getString("image"));
 				pdlist.add(pro);
 			}
 			return pdlist;

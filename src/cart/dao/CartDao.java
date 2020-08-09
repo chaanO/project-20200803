@@ -12,25 +12,27 @@ import jdbc.JdbcUtil;
 import jdbc.connection.ConnectionProvider;
 
 public class CartDao {
-	public int checkBybookId(int bookId) throws SQLException {
-		int rst = 0;
+	public Cart checkBybookId(Connection conn, int bookId) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Connection conn = ConnectionProvider.getConnection();
 		
 		try {
+			conn = ConnectionProvider.getConnection();
 			String sql = "SELECT amount FROM cart WHERE bookId = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bookId);
 			rs = pstmt.executeQuery();
+			Cart cart = null;
 			while (rs.next()) {
-				rst = rs.getInt("amount");
+				cart = new Cart(
+						rs.getInt("bookId"),
+						rs.getInt("amount"),
+						rs.getString("memberId"));
 			}
-			return rst;
+			return cart;
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
-			JdbcUtil.close(conn);
 		}
 	}
 	
@@ -45,10 +47,10 @@ public class CartDao {
 			String sql = "SELECT * FROM cart";
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				Cart cart = new Cart();
-				cart.setCartId(rs.getInt("cartId"));
-				cart.setBookId(rs.getInt("bookId"));
-				cart.setAmount(rs.getInt("amount"));
+				Cart cart = new Cart(
+					rs.getInt("bookId"),
+					rs.getInt("amount"),
+					rs.getString("memberId"));
 				clist.add(cart);
 			}
 			return clist;
@@ -59,12 +61,12 @@ public class CartDao {
 		}
 	}
 	
-	public int regCart(Cart cart) throws SQLException {
+	public int insertCart(Connection conn, Cart cart) throws SQLException {
 		int rst = 0;
 		PreparedStatement pstmt = null;
-		Connection conn = ConnectionProvider.getConnection();
 		
 		try {
+			conn = ConnectionProvider.getConnection();
 			String sql = "INSERT INTO cart VALUE (?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, cart.getBookId());
@@ -75,7 +77,6 @@ public class CartDao {
 			return rst;
 		} finally {
 			JdbcUtil.close(pstmt);
-			JdbcUtil.close(conn);
 		}
 	}
 	
