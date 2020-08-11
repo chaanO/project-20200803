@@ -7,9 +7,11 @@ import article.service.ArticleContentNotFoundException;
 import article.service.ArticleData;
 import article.service.ArticleNotFoundException;
 import article.service.ReadArticleService;
+import comment.service.CommentListView;
+import comment.service.GetCommentListService;
 import mvc.controller.CommandHandler;
 
-public class ReadArticleHandler  implements CommandHandler{
+public class ReadArticleHandler implements CommandHandler{
 	private ReadArticleService readService = new ReadArticleService();
 	
 	@Override
@@ -19,6 +21,11 @@ public class ReadArticleHandler  implements CommandHandler{
 		try {
 			ArticleData articleData = readService.getArticle(articleNum, true);
 			req.setAttribute("articleData", articleData);
+			
+			GetCommentListService service = GetCommentListService.getInstance();
+			CommentListView list = service.getCommentList(1);
+			req.setAttribute("list", list);
+			
 			return "/WEB-INF/view/readArticle.jsp";
 		}catch(ArticleNotFoundException | ArticleContentNotFoundException e) {
 			e.printStackTrace();
