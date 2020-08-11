@@ -1,9 +1,11 @@
 package cart.command;
 
 import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 
 import cart.service.CartService;
+import cart.model.Cart;
 import cart.service.CartRequest;
 import mvc.controller.CommandHandler;
 
@@ -35,8 +37,13 @@ public class CartHandler implements CommandHandler {
 		cartReq.setMemberId(req.getParameter("memberId"));
 		
 		try {
-			cartService.cart(cartReq);
-			return "/cart.jsp";
+			Cart cart = cartService.selectBybookId(cartReq);
+			if(cart == null) {
+				cartService.cart(cartReq);
+			} else {
+				cartService.update(cartReq);
+			}
+			return "/buySuccess.jsp";
 		} catch (Exception e) {
 			e.printStackTrace();
 			return FORM_VIEW;

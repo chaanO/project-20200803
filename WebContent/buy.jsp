@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
-<%@ page import="java.util.ArrayList"%>
 <%@ page import="cart.dao.ProductDao"%>
 <%@ page import="cart.model.Product"%>
 <!DOCTYPE html>
@@ -32,15 +31,16 @@
 <img src="${result[param.no].image }" height="200" style="float:left; margin-right: 20px; margin-top: 10px; margin-left:20px">
 	<div class="jumbotron">
 	  <h1 class="display-5">도서 구매</h1>
-	  <p class="lead"><input type="hidden" name="bookName" value="${result[param.no].bookName }">제목 : ${result[param.no].bookName } </p>
-	  <p class="lead"><input type="hidden" name="price" value="${result[param.no].price }">가격 : ${result[param.no].price }원</p>
+	  <input type="hidden" name="bookId" value="${result[param.no].bookId }" />
+	  <p class="lead"><input type="hidden" name="bookName" value="${param.bookName }">제목 : ${result[param.no].bookName} </p>
+	  <p class="lead"><input type="hidden" name="price" value="${result[param.no].price}">가격 : ${result[param.no].price}원</p>
 	  <input type="hidden" name="memberId" value="${authUser.id }">
 	  <hr class="my-4">
 	  <div class="form-group">
 	    <label for="Amount">수량</label>
-	    <input type="text" name="amount" class="form-control" id="Amount">
+	    <input type="text" name="amount" class="form-control" id="Amount" value="${param.amount }">
       </div>
-	  <input type="submit" value="장바구니 담기">
+	  <input type="submit" data-toggle="modal" data-target="#staticBackdrop" value="장바구니 담기">
 	  <input type="button" value="바로결제">
 	</div>
 </form>
@@ -61,26 +61,5 @@
 	  <a class="btn btn-primary btn-lg" href="#" role="button">바로 결제</a>
 	</div>
 </div> --%>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">장바구니 담기 완료</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        	장바구니에 상품을 담았습니다.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">장바구니 확인</button>
-        <button type="button" class="btn btn-primary">쇼핑 계속하기</button>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>

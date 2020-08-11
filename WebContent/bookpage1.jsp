@@ -58,7 +58,7 @@
 			    	
 			    	
 			    	김서경 저 | 메이븐 | 2019.07.01 <br />
-			    	가격 : ${result[1].price }원
+			    	가격 : ${result[0].price }원
 			   	</small>
    			</p>
       </td>

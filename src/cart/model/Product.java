@@ -5,7 +5,7 @@ public class Product {
 	private String bookName;
 	private int price;
 	private String image;
-	
+
 	public int getBookId() {
 		return bookId;
 	}
