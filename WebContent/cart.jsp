@@ -30,10 +30,11 @@
 		<td>수량</td>
 		<td>총 금액</td>
 		<td>날짜</td>
+		<td>삭제</td>
 	</tr>
 	<c:if test="${cartPage.hasNoCarts() }">
 		<tr>
-			<td colspan="6">장바구니가 비었습니다.</td>
+			<td colspan="7">장바구니가 비었습니다.</td>
 		</tr>
 	</c:if>
 	<%--
@@ -49,6 +50,7 @@
 					<td>${cart.amount }</td>
 					<td>${cart.product.price * cart.amount }</td>
 					<td>${cart.regDateCustom }</td>
+					<td><a href="${ctxPath }/delete.do">삭제</a></td>
 				</tr>
 			</c:forEach>
 			
@@ -67,7 +69,7 @@
 	 --%>
 	<c:if test="${cartPage.hasCarts() }">
 		<tr>
-			<td colspan="6">
+			<td colspan="7">
 				<c:if test="${cartPage.startPage > 5 }">
 				<a href="list.do?pageNo=${cartPage.startPage - 5 }">[이전]</a>
 				</c:if>

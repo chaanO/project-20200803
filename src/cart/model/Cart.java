@@ -43,7 +43,7 @@ public class Cart {
 		return regDate;
 	}
 	
-	// 날짜 형식
+	// �궇吏� �삎�떇
 	public String getRegDateCustom() {
 		return new SimpleDateFormat("yyyy-MM-dd HH:mm").format(regDate);
 	}

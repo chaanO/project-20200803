@@ -111,16 +111,11 @@ public class CartDao {
 			pstmt.executeUpdate();
 		}
 	}
-
-	public int selectAllForCartByBookId(Connection conn, Cart cart) throws SQLException {
-		ResultSet rs = null;
-		try (PreparedStatement pstmt = conn.prepareStatement("select count(*) from cart where bookid = ?")) {
+	
+	public void delete(Connection conn, Cart cart) throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement("DELETE FROM cart WHERE bookId = ?")) {
 			pstmt.setInt(1, cart.getBookId());
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				return rs.getInt(1);
-			}
-			return 0;
+			pstmt.executeUpdate();
 		}
 	}
 }
