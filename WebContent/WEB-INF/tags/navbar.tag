@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="${ctxPath }/main.jsp">중앙문고</a>
+  <a class="navbar-brand" href="${ctxPath }/main.jsp"><i class="fas fa-book-open"></i>&nbsp;중앙문고</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,26 +23,26 @@
       </li>
     </ul>
     
-    <div class="navbar-nav ">
+    <div class="navbar-nav">
       <c:if test="${not empty sessionScope.authUser }">
       
-         <a class="nav-link nav-item ${current.write }" href="">${authUser.name }님</a>
+         <a class="nav-link nav-item active" href="">${authUser.name }님</a>
          
-         <a class="nav-link nav-item ${current.logout }" href="${ctxPath }/logout.do">로그아웃</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/logout.do">로그아웃</a>
          
-         <a class="nav-link nav-item ${current.changeUser }" href="${ctxPath }/changeUser.do">회원정보 수정</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/changeUser.do">회원정보 수정</a>
          
-         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/article/list.do">고객센터</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/article/list.do">고객센터</a>
          
-         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/list.do">장바구니</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/list.do">장바구니</a>
       </c:if>
 
       <c:if test="${empty sessionScope.authUser }">
-         <a class="nav-link nav-item ${current.login }" href="${ctxPath }/login.do">로그인</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/login.do">로그인</a>
          
-         <a class="nav-link nav-item ${current.join }" href="${ctxPath }/join.do">회원가입</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/join.do">회원가입</a>
          
-         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/article/list.do">고객센터</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/article/list.do">고객센터</a>
       </c:if>
    </div>
   </div>
