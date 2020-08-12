@@ -39,10 +39,7 @@
 	<div class="form-group">
 		
 <input type="button" class="btn btn-dark" onclick="location='${ctxPath}/list.do'" value="장바구니 확인" />
-<%--
-<input type="button" class="btn btn-dark" onclick="location='${ctxPath}/cart.jsp'" value="장바구니 확인" />
- --%>
-<input type="button" class="btn btn-dark" value="로그인" />
+
 </div>
 </form>
 </div>

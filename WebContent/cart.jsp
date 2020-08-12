@@ -20,6 +20,11 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
 <title>장바구니</title>
+<script>
+	$('#myModal').on('shown.bs.modal', function () {
+	  $('#myInput').trigger('focus')
+	})
+</script>
 </head>
 <body>
 
@@ -31,6 +36,7 @@
 		<td>수량</td>
 		<td>총 금액</td>
 		<td>삭제</td>
+		<td>결제</td>
 	</tr>
 	<c:if test="${cartPage.hasNoCarts() }">
 		<tr>
@@ -50,10 +56,33 @@
 					<td>${cart.amount }</td>
 					<td>${cart.product.price * cart.amount }</td>
 					<td>
-					<form action="delete" method="post">
-					<input type="hidden" name="bookId" value="${cart.bookId }" />
-					<input type="submit" value="삭제" />
-					</form>
+						<form action="delete" method="post">
+							<input type="hidden" name="bookId" value="${cart.bookId }" />
+							<input type="submit" value="삭제" />
+						</form>
+					</td>
+					<td>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">결제</button>
+						
+						<!-- Modal -->
+						<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="staticBackdropLabel">결제</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						       	 결제 완료.
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-primary" onclick="location='main.jsp'">확인</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
 					</td>
 				</tr>
 			</c:forEach>
