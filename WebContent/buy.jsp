@@ -40,12 +40,30 @@
 	    <label for="Amount">수량</label>
 	    <input type="text" name="amount" class="form-control" id="Amount" value="${param.amount }">
       </div>
-	  <input type="submit" data-toggle="modal" data-target="#staticBackdrop" value="장바구니 담기">
-	  <input type="button" value="바로결제">
+	  <input type="submit" value="장바구니 담기">
+	  <input type="button" data-toggle="modal" data-target="#staticBackdrop" value="바로결제">
 	</div>
 </form>
 </div>
 
-
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">결제</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	 결제 완료.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="location='main.jsp'">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
