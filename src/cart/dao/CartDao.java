@@ -1,6 +1,7 @@
 package cart.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,12 +10,21 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import cart.model.Cart;
 import cart.model.Product;
 import jdbc.JdbcUtil;
 
 public class CartDao {
+	private static CartDao cartDao = new CartDao();
+
+	public static CartDao getInstance() {
+		return cartDao;
+	}
+
+	public CartDao() {
+		
+	}
+	
 	public Cart selectBybookId(Connection conn, int bookId) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -105,17 +115,17 @@ public class CartDao {
 	}
 	
 	public void update(Connection conn, Cart cart) throws SQLException {
-		try (PreparedStatement pstmt = conn.prepareStatement("UPDATE cart SET amount = ? WHERE bookId = ?")) {
+		try (PreparedStatement pstmt = conn.prepareStatement("UPDATE cart SET amount = amount + ? WHERE bookId = ?")) {
 			pstmt.setInt(1, cart.getAmount());
 			pstmt.setInt(2, cart.getBookId());
 			pstmt.executeUpdate();
 		}
 	}
 	
-	public void delete(Connection conn, Cart cart) throws SQLException {
+	public int delete(Connection conn, int bookId) throws SQLException {
 		try (PreparedStatement pstmt = conn.prepareStatement("DELETE FROM cart WHERE bookId = ?")) {
-			pstmt.setInt(1, cart.getBookId());
-			pstmt.executeUpdate();
+			pstmt.setInt(1, bookId);
+			return pstmt.executeUpdate();
 		}
 	}
 }

@@ -1,31 +1,26 @@
-package test;
+package cart.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.util.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import cart.dao.CartDao;
-import cart.model.Cart;
-import cart.model.Product;
-import jdbc.connection.ConnectionProvider;
+import cart.service.DeleteCartService;
 
 /**
- * Servlet implementation class UpdateCartTestServlet
+ * Servlet implementation class DeleteCartServlet
  */
-@WebServlet("/UpdateCartTestServlet")
-public class UpdateCartTestServlet extends HttpServlet {
+@WebServlet("/delete")
+public class DeleteCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateCartTestServlet() {
+    public DeleteCartServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,25 +29,25 @@ public class UpdateCartTestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Connection conn = null;
-		
-		try {
-			CartDao dao = new CartDao();
-			conn = ConnectionProvider.getConnection();
-			Cart cart = new Cart(new Product(), 1, 10, "aaa", new Date());
-			dao.update(conn, cart);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		HttpSession session = request.getSession();
+		String bookIdStr = request.getParameter("bookId");
+		int bookId = Integer.parseInt(bookIdStr);
+		
+		DeleteCartService service = DeleteCartService.getInstance();
+		
+		String info = service.deleteCart(bookId);
+		
+		session.setAttribute("info", info);
+		
+		response.sendRedirect(request.getContextPath() + "/list.do");
 	}
 
 }

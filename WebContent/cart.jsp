@@ -22,6 +22,7 @@
 <title>장바구니</title>
 </head>
 <body>
+
 <table border="1">
 	<tr>
 		<td>도서</td>
@@ -29,7 +30,6 @@
 		<td>가격</td>
 		<td>수량</td>
 		<td>총 금액</td>
-		<td>날짜</td>
 		<td>삭제</td>
 	</tr>
 	<c:if test="${cartPage.hasNoCarts() }">
@@ -49,8 +49,12 @@
 					<td>${cart.product.price }</td>
 					<td>${cart.amount }</td>
 					<td>${cart.product.price * cart.amount }</td>
-					<td>${cart.regDateCustom }</td>
-					<td><a href="${ctxPath }/delete.do">삭제</a></td>
+					<td>
+					<form action="delete" method="post">
+					<input type="hidden" name="bookId" value="${cart.bookId }" />
+					<input type="submit" value="삭제" />
+					</form>
+					</td>
 				</tr>
 			</c:forEach>
 			
@@ -83,6 +87,5 @@
 		</tr>
 	</c:if>
 </table>
-
 </body>
 </html>
