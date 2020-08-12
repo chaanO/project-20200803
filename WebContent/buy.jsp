@@ -46,20 +46,6 @@
 </form>
 </div>
 
-<%-- <div class="container">
-<img src="${result[param.no].image }" height="200" style="float:left; margin-right: 20px; margin-top: 10px; margin-left:20px">
-	<div class="jumbotron">
-	  <h1 class="display-5">도서 구매</h1>
-	  <p class="lead">제목 : ${result[param.no].bookName }</p>
-	  <p class="lead">가격 : ${result[param.no].price }원</p>
-	  <hr class="my-4">
-	  <div class="form-group">
-	    <label for="Amount">수량</label>
-	    <input type="text" name="amount" class="form-control" id="Amount">
-      </div>
-	  <a class="btn btn-primary btn-lg" href="/cart.do" role="submit"  data-toggle="modal" data-target="#staticBackdrop">장바구니 담기</a>
-	  <a class="btn btn-primary btn-lg" href="#" role="button">바로 결제</a>
-	</div>
-</div> --%>
+
 </body>
 </html>

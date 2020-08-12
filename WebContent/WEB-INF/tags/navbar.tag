@@ -23,11 +23,6 @@
       </li>
     </ul>
     
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-    </form>
-    
     <div class="navbar-nav ">
       <c:if test="${not empty sessionScope.authUser }">
       
@@ -38,6 +33,8 @@
          <a class="nav-link nav-item ${current.changeUser }" href="${ctxPath }/changeUser.do">회원정보 수정</a>
          
          <a class="nav-link nav-item ${current.list }" href="${ctxPath }/article/list.do">고객센터</a>
+         
+         <a class="nav-link nav-item ${current.list }" href="${ctxPath }/list.do">장바구니</a>
       </c:if>
 
       <c:if test="${empty sessionScope.authUser }">

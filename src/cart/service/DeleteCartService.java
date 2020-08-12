@@ -1,37 +1,46 @@
 package cart.service;
 
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Date;
 
 import cart.dao.CartDao;
 import cart.model.Cart;
-import cart.model.Product;
 import jdbc.JdbcUtil;
 import jdbc.connection.ConnectionProvider;
 
 public class DeleteCartService {
-	private CartDao cartDao = new CartDao();
+	private static DeleteCartService instance = new DeleteCartService();
 	
-	public void delete(CartRequest cartReq) {
+	public static DeleteCartService getInstance() {
+		return instance;
+	}
+	
+	private DeleteCartService() {
+		
+	}
+	
+	public String deleteCart(int bookId) {
 		Connection conn = null;
 		
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
 			
-			cartDao.delete(conn, new Cart(
-					new Product(),
-					cartReq.getBookId(),
-					cartReq.getAmount(),
-					cartReq.getMemberId(),
-					new Date()));
+			CartDao cartDao = CartDao.getInstance();
+			Cart cart = cartDao.selectBybookId(conn, bookId);
+			
+			if (cart == null) {
+				return "장바구니가 비었습니다.";
+			}
+			cartDao.delete(conn, bookId);
 			conn.commit();
-		} catch (SQLException e) {
-			JdbcUtil.rollback(conn);
-			throw new RuntimeException(e);
+			
+			return "삭제 성공";
+		} catch (Exception e) {
+			JdbcUtil.close(conn);
+			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(conn);
 		}
+		return "삭제 실패";
 	}
 }
