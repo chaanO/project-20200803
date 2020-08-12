@@ -1,78 +1,131 @@
 package cart.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
-
+import java.util.Date;
+import java.util.List;
 import cart.model.Cart;
+import cart.model.Product;
 import jdbc.JdbcUtil;
-import jdbc.connection.ConnectionProvider;
 
 public class CartDao {
-	public int checkBybookId(int bookId) throws SQLException {
-		int rst = 0;
+	private static CartDao cartDao = new CartDao();
+
+	public static CartDao getInstance() {
+		return cartDao;
+	}
+
+	public CartDao() {
+		
+	}
+	
+	public Cart selectBybookId(Connection conn, int bookId) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Connection conn = ConnectionProvider.getConnection();
 		
 		try {
-			String sql = "SELECT amount FROM cart WHERE bookId = ?";
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement("SELECT * FROM cart WHERE bookId = ?");
 			pstmt.setInt(1, bookId);
 			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				rst = rs.getInt("amount");
+			Cart cart = null;
+			if (rs.next()) {
+				cart = new Cart(
+						new Product(),
+						rs.getInt("bookId"),
+						rs.getInt("amount"),
+						rs.getString("memberId"),
+						toDate(rs.getTimestamp("regdate")));
 			}
-			return rst;
+			return cart;
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
 		}
 	}
 	
-	public ArrayList<Cart> cartList() throws SQLException {
-		ArrayList<Cart> clist = new ArrayList<Cart>();
+	public void insert(Connection conn, Cart cart) throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement("INSERT INTO cart VALUES (0, ?, ?, ?, ?)")) {
+			pstmt.setInt(1, cart.getBookId());
+			pstmt.setInt(2, cart.getAmount());
+			pstmt.setString(3, cart.getMemberId());
+			pstmt.setTimestamp(4, new Timestamp(cart.getRegDate().getTime()));
+			pstmt.executeUpdate();
+		}
+	}
+	
+	public int selectCount(Connection conn) throws SQLException {
 		Statement stmt = null;
 		ResultSet rs = null;
-		Connection conn = ConnectionProvider.getConnection();
 		
 		try {
 			stmt = conn.createStatement();
-			String sql = "SELECT * FROM cart";
-			rs = stmt.executeQuery(sql);
-			while (rs.next()) {
-				Cart cart = new Cart();
-				cart.setCartId(rs.getInt("cartId"));
-				cart.setBookId(rs.getInt("bookId"));
-				cart.setAmount(rs.getInt("amount"));
-				clist.add(cart);
+			rs = stmt.executeQuery("SELECT COUNT(*) FROM cart");
+			
+			if (rs.next()) {
+				return rs.getInt(1);
 			}
-			return clist;
+			return 0;
 		} finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(stmt);
 		}
 	}
 	
-	public int regCart(Cart cart) throws SQLException {
-		int rst = 0;
+	public List<Cart> select(Connection conn, int startRow, int size) throws SQLException {
 		PreparedStatement pstmt = null;
-		Connection conn = ConnectionProvider.getConnection();
+		ResultSet rs = null;
 		
 		try {
-			String sql = "INSERT INTO cart VALUE (?, ?, ?)";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, cart.getCartId());
-			pstmt.setInt(2, cart.getBookId());
-			pstmt.setInt(3, cart.getAmount());
-			rst = pstmt.executeUpdate();
+			pstmt = conn.prepareStatement("SELECT * FROM product, cart WHERE product.bookId = cart.bookId ORDER BY regdate DESC limit ?, ?");
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, size);
+			rs = pstmt.executeQuery();
 			
-			return rst;
+			List<Cart> result = new ArrayList<>();
+			while (rs.next()) {
+				result.add(convertCart(rs));
+			}
+			return result;
 		} finally {
+			JdbcUtil.close(rs);
 			JdbcUtil.close(pstmt);
+		}
+	}
+
+	private Cart convertCart(ResultSet rs) throws SQLException {
+		Product pro = new Product();
+		
+		pro.setBookId(rs.getInt("bookId"));
+		pro.setBookName(rs.getString("bookName"));
+		pro.setImage(rs.getString("image"));
+		pro.setPrice(rs.getInt("price"));
+		
+		return new Cart(pro,
+				rs.getInt("bookId"), rs.getInt("amount"), rs.getString("memberId"), toDate(rs.getTimestamp("regdate")));
+	}
+
+	private Date toDate(Timestamp timestamp) {
+		return new Date(timestamp.getTime());
+	}
+	
+	public void update(Connection conn, Cart cart) throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement("UPDATE cart SET amount = amount + ? WHERE bookId = ?")) {
+			pstmt.setInt(1, cart.getAmount());
+			pstmt.setInt(2, cart.getBookId());
+			pstmt.executeUpdate();
+		}
+	}
+	
+	public int delete(Connection conn, int bookId) throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement("DELETE FROM cart WHERE bookId = ?")) {
+			pstmt.setInt(1, bookId);
+			return pstmt.executeUpdate();
 		}
 	}
 }
