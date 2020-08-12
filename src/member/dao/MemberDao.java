@@ -67,4 +67,12 @@ public class MemberDao {
 			pstmt.executeUpdate();
 		}
 	}
+	
+	/*회원 탈퇴*/
+	public void delete(Connection conn, Member member) throws SQLException {
+		try(PreparedStatement pstmt = conn.prepareStatement("delete from member where memberid = ?")){
+			pstmt.setString(1, member.getId());
+			pstmt.executeUpdate();
+		}
+	}
 }

@@ -3,6 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -15,35 +16,17 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
 <title>Insert title here</title>
-<style>
-	.container-fluid {
-		background-color:white;
-		width:400px;
-	}
-	
-	h1 {
-		text-align:center;
-	}
-	
-	h5 {
-		text-align:center;
-	}
-</style>
 </head>
 <body>
-<body class="bg-light">
+<my:navbar />
+<br>
+<h2>탈퇴하시려면 비밀번호를 입력해주세요.</h2>
 
-<div class="container-fluid shadow p-3">
-	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
-  		<i class="fas fa-chevron-left"></i>
-	</button>
-<h1>중앙문고</h1>
-<h5>게시글 작성 완료</h5>
-<form action="login.do" method="post">
-		<button type="button" class="btn btn-secondary" 
-				onclick="location.href ='${ctxPath }/article/read.do?no=${newArticleNo}' ">작성 글 확인하기</button>
-	    <button type="button" class="btn btn-secondary" onclick="location.href = '${ctxPath }/article/list.do' ">목록으로</button>
+<form action="" method="post">
+암호: <input type="password" name="curPwd" />
+		<c:if test="${errors.curPwd }">현재 암호를 입력하세요.</c:if>
+		<c:if test="${errors.badCurPwd }">현재 암호가 일치하지 않습니다.</c:if>
+	<br /><input type="submit" value = "확인" />
 </form>
-</div>
 </body>
 </html>

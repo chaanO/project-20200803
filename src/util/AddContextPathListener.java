@@ -1,5 +1,6 @@
 package util;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -9,7 +10,7 @@ import javax.servlet.annotation.WebListener;
  * Application Lifecycle Listener implementation class AddContextPathListener
  *
  */
-
+@WebListener
 public class AddContextPathListener implements ServletContextListener {
 
     /**
@@ -30,18 +31,13 @@ public class AddContextPathListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
-    	ServletContext application = sce.getServletContext();
-    	String path = application.getContextPath();
-    	
-    	application.setAttribute("ctxPath", path);
+         ServletContext application = sce.getServletContext();
+         String path = application.getContextPath();
+         
+         application.setAttribute("ctxPath", path);
+         
+
+         
     }
 	
 }
-
-
-
-
-
-
-
-

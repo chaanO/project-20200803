@@ -31,6 +31,7 @@
 
 <h1><br />QnA게시판</h1>
 <div class="container-fluid" >
+
 	<form action="write.do" method="post">
 			<div class="form-group">
 				<label for="title">제목</label> 

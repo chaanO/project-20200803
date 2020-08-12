@@ -6,15 +6,21 @@ public class Comment {
 	private String password;
 	private String message;
 	private int commentNo;
+	private String content;
 	
-	
-	
-
 
 	@Override
 	public String toString() {
 		return "Message [articleNo=" + articleNo + ", writerName=" + writerName + ", password=" + password + ", message=" + message
 				+ "]";
+	}
+	
+	public String getContent() {
+		return content;
+	}
+	
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 	public int getCommentNo() {

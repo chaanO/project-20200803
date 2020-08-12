@@ -54,8 +54,8 @@ public class WriteServlet extends HttpServlet {
 		String pageNo = request.getParameter("pageNo");
 		String articleNo = request.getParameter("articleNo");
 
-		if (name == null || body == null || name.isEmpty() || body.isEmpty()) {
-			session.setAttribute("info", "이름, 메세지를 정확하게 입력해주세요");
+		if (body == null || body.isEmpty()) {
+			session.setAttribute("info", "댓글을 입력해주세요");
 		} else {
 
 			//입력

@@ -34,7 +34,7 @@
 	  	<br />
 	  	<br />
 	  	<br />
- 		<button type="button" class="btn btn-dark btn-lg btn-block" onclick="location='${ctxPath}/main.jsp'">확인</button>
+ 		<button type="button" class="btn btn-dark btn-lg btn-block" onclick="location='main.jsp'">확인</button>
 	</form>
 </div>
 

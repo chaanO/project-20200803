@@ -12,26 +12,27 @@ import comment.service.GetCommentListService;
 import mvc.controller.CommandHandler;
 
 public class ReadArticleHandler implements CommandHandler{
-   private ReadArticleService readService = new ReadArticleService();
-   
-   @Override
-   public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-      String noVal = req.getParameter("no");
-      int articleNum = Integer.parseInt(noVal);
-      try {
-         ArticleData articleData = readService.getArticle(articleNum, true);
-         req.setAttribute("articleData", articleData);
-         
-         GetCommentListService service = GetCommentListService.getInstance();
-         CommentListView list = service.getCommentList(1);
-         req.setAttribute("list", list);
-         
-         return "/WEB-INF/view/readArticle.jsp";
-      }catch(ArticleNotFoundException | ArticleContentNotFoundException e) {
-         e.printStackTrace();
-         req.getServletContext().log("no article", e);
-         res.sendError(HttpServletResponse.SC_NOT_FOUND);
-         return null;
-      }
-   }
+	private ReadArticleService readService = new ReadArticleService();
+	
+	@Override
+	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		String noVal = req.getParameter("no");
+		int articleNum = Integer.parseInt(noVal);
+		try {
+			ArticleData articleData = readService.getArticle(articleNum, true);
+			req.setAttribute("articleData", articleData);
+			
+			GetCommentListService service = GetCommentListService.getInstance();
+			CommentListView list = service.getCommentList(1);
+			req.setAttribute("list", list);
+			
+			return "/WEB-INF/view/readArticle.jsp";
+		}catch(ArticleNotFoundException | ArticleContentNotFoundException e) {
+			e.printStackTrace();
+			req.getServletContext().log("no article", e);
+			res.sendError(HttpServletResponse.SC_NOT_FOUND);
+			return null;
+		}
+	}
 }
+
