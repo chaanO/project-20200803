@@ -8,10 +8,10 @@ import jdbc.connection.ConnectionProvider;
 import member.dao.MemberDao;
 import member.model.Member;
 
-public class ChangeUserService {
+public class DeleteUserService {
 	private MemberDao memberDao = new MemberDao();
 	
-	public void changeUser(String userId, String curPwd, String newPwd, String newPhone, String newAddr, String newEmail) {
+	public void deleteUser(String userId, String curPwd) {
 		Connection conn = null;
 		
 		try {
@@ -19,23 +19,22 @@ public class ChangeUserService {
 			conn.setAutoCommit(false);
 			
 			Member member = memberDao.selectById(conn, userId);
-			if (member == null) {
+			if(member == null) {
 				throw new MemberNotFoundException();
 			}
-			if (!member.matchPassword(curPwd)) {
+			if(!member.matchPassword(curPwd)) {
 				throw new InvalidPasswordException();
 			}
-			member.changeUser(newPwd, newPhone, newAddr, newEmail);
-			memberDao.update(conn, member);
+			
+			memberDao.delete(conn, member);
 			conn.commit();
-		} catch (SQLException e) {
+		}catch(SQLException e) {
+			e.printStackTrace();
 			JdbcUtil.rollback(conn);
 			throw new RuntimeException(e);
-		} finally {
+		}finally {
 			JdbcUtil.close(conn);
 		}
 	}
-	
-	
+
 }
- 

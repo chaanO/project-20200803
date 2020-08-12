@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +14,23 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
 <title>회원정보 수정</title>
+<script>
+	$(function() {
+		$('#exampleModal').on('show.bs.modal', function(event) {
+			var button = $(event.relatedTarget);
+			var recipient = button.data('message-id');
+			var modal = $(this);
+			modal.find('#recipient-name').val(recipient);
+		});
+	});
+</script>
 </head>
 <body>
+<my:navbar />
+<br>
+<h2>수정하실 회원 정보를 입력해주세요.</h2>
 
-<form action="changeUser.do" method="post">
+<form action="" method="post">
 	<p>
 		현재 암호 : <br /><input type="password" name="curPwd" />
 		<c:if test="${errors.curPwd }">현재 암호를 입력하세요.</c:if>
@@ -38,8 +52,19 @@
 		새 이메일 : <br /><input type="email" name="newEmail" />
 		<c:if test="${errors.newEmail }">새 이메일을 입력하세요.</c:if>
 	</p>
-	<input type="submit" value="변경완료" />
+	<input type="submit" href="#exampleModal" 
+	data-toggle="modal"
+	value="변경완료" />
+	
 </form>
+
+<br />
+<form action="deleteUser.do">
+<input type="submit" value="회원탈퇴" />
+</form>
+
+
+
 
 </body>
 </html> 

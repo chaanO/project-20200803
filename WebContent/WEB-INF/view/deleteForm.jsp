@@ -17,7 +17,6 @@
 <title>삭제</title>
 </head>
 <body>
-ㅁㅇㄴ
 <form action="delete.do?no=${delReq.articleNumber }" method="post">
 암호: <input type="password" name ="password" /> <br />
 <c:if test="${errors.password}">암호를 입력하세요.</c:if>

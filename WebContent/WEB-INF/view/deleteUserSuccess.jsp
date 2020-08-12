@@ -21,29 +21,24 @@
 		width:400px;
 	}
 	
-	h1 {
-		text-align:center;
-	}
-	
-	h5 {
+	h4 {
 		text-align:center;
 	}
 </style>
 </head>
-<body>
 <body class="bg-light">
 
 <div class="container-fluid shadow p-3">
-	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
-  		<i class="fas fa-chevron-left"></i>
-	</button>
-<h1>중앙문고</h1>
-<h5>게시글 작성 완료</h5>
-<form action="login.do" method="post">
-		<button type="button" class="btn btn-secondary" 
-				onclick="location.href ='${ctxPath }/article/read.do?no=${newArticleNo}' ">작성 글 확인하기</button>
-	    <button type="button" class="btn btn-secondary" onclick="location.href = '${ctxPath }/article/list.do' ">목록으로</button>
-</form>
+   	<form>
+	  	<div class="form-group">
+		    <h4>탈퇴 완료.</h2>
+	  	</div>
+	  	<br />
+	  	<br />
+	  	<br />
+ 		<button type="button" class="btn btn-dark btn-lg btn-block" onclick="location='${ctxPath }/logout.do'">확인</button>
+	</form>
 </div>
+
 </body>
 </html>
