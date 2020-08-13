@@ -41,6 +41,11 @@
 	text-align: left;
 	box-sizing: border-box
 }
+
+.container-fluid {
+	background-color: white;
+	width: 1500px;
+}
 </style>
 
 <script>
@@ -59,7 +64,7 @@
 	<my:navbar />
 	<br>
 <div class="container-fluid" >
-	<h2>문의하신 내용입니다.</h2>
+	<br /><h2>문의하신 내용입니다.</h2>
 	<br />
 	<table class="table table-bordered" border="1" width="100%">
 		<tr>

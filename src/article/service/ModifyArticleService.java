@@ -28,11 +28,9 @@ public class ModifyArticleService {
 				throw new PermissionDeniedException();
 			}
 			
-			
-			
-			
-			
-			articleDao.update(conn, modReq.getArticleNumber(), modReq.getUserId());
+		
+			articleDao.update(conn, modReq.getArticleNumber(), modReq.getUserName());
+			articleDao.update(conn, modReq.getArticleNumber(), modReq.getTitle());
 			contentDao.update(conn, modReq.getArticleNumber(), modReq.getContent());
 			conn.commit();
 		}catch(SQLException e) {

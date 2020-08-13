@@ -18,7 +18,7 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script
 	src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-<title>Insert title here</title>
+<title>문의게시판</title>
 <style>
 #r {
 	text-align: left;
@@ -62,14 +62,21 @@
 	text-align: right;
 	border-bottom: solid white
 }
+
+.container-fluid {
+	background-color: white;
+	width: 1500px;
+}
+
 </style>
 </head>
 
 <body>
 	<my:navbar />
 
+	<div class="container-fluid" >
 	<h1>
-		<br />QnA게시판
+		<br />문의게시판
 	</h1>
 	<table class="table">
 		<thead class="thead-light">
@@ -148,5 +155,6 @@
 		</tbody>
 
 	</table>
+	</div>
 </body>
 </html>

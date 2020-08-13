@@ -48,7 +48,7 @@
 			</div>
 			<div class="form-group">
 				<label for="writer">작성자</label> <input type="text" name="name"
-					class="form-control input-lg" value="${modReq.userId }"
+					class="form-control input-lg" value="${modReq.userName }"
 					disabled="disabled" />
 			</div>
 			<div class="form-group">

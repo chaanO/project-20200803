@@ -7,12 +7,18 @@ public class ModifyRequest {
 	private int articleNumber;
 	private String title;
 	private String content;
+	private String userName;
 	
-	public ModifyRequest(String userId, int articleNumber, String title, String content) {
+
+	public ModifyRequest(String userId, int articleNumber, String title, String content, String userName) {
 		this.userId = userId;
 		this.articleNumber = articleNumber;
 		this.title = title;
 		this.content = content;
+		this.userName = userName;
+	}
+	public String getUserName() {
+		return userName;
 	}
 
 	public String getUserId() {
