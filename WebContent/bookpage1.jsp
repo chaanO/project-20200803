@@ -59,7 +59,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${0 }"><strong>${result[0].bookName }</strong></a> <br />
-			    	김서경 저 | 메이븐 | 2019.07.01 <br />
+			    	김선경 저 | 메이븐 | 2019.07.01 <br />
 			    	가격 : ${result[0].price }원
 			   	</small>
    			</p>
