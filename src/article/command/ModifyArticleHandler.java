@@ -17,7 +17,7 @@ import auth.service.User;
 import mvc.controller.CommandHandler;
 
 public class ModifyArticleHandler implements CommandHandler {
-	private static final String FORM_VIEW = "/WEB-INF/view/modifyForm.jsp";
+	private static final String FORM_VIEW = "/WEB-INF/view/ModifyForm.jsp";
 	
 	private ReadArticleService readService = new ReadArticleService();
 	private ModifyArticleService modifyService = new ModifyArticleService();

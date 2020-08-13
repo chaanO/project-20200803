@@ -5,6 +5,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="u" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
+
+<%
+	//줄바꿈
+	pageContext.setAttribute("br", "<br/>");
+	pageContext.setAttribute("cn", "\n");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,11 +76,13 @@
 		</tr>
 		<tr>
 			<td id="ex1">내용</td>
-			<td colspan="4" >${articleData.content }</td>
+			<td colspan="4" >${fn:replace(articleData.content,cn, br) }</td>
 
 		</tr>
 		<tr>
-			<td colspan="4" >
+	</table>
+	<table border="0" align="right">
+			<td>
 			<c:set var="pageNo"
 					value="${empty param.pageNo ? '1' : param.pageNo }" /> <a
 				class="btn btn-secondary" href="list.do?pageNo=${pageNo}" role="button">목록</a> 
@@ -88,26 +96,25 @@
 				</td>
 		</tr>
 	</table>
-
-
+<br />
 
 		<!-- 댓글 입력 -->
-	<div >
+	<div>
 		<form action="write" method="post">
 			<br />
-			<div class="form-group">
-				<h3>답변</h3>
+			<h3>답변</h3>
+			<div class="form-group" align="right">
 				<textarea required="required" name="message" class="form-control"
-					id="exampleFormControlTextarea1" rows="3"></textarea>
-			</div>
+					id="exampleFormControlTextarea1" rows="6"></textarea>
 
 			<input type="hidden" name="name" value="${authUser.name }" /> <input
 				type="hidden" name="no" value="${param.no }" /> <input
 				type="hidden" name="pageNo" value="${param.pageNo }" /> <input
 				type="hidden" name="articleNo" value="${param.no }" />
+	<br />
 
-
-			<button type="submit" class="btn btn-secondary" >댓글 등록</button>
+			<button type="submit" class="btn btn-secondary">댓글 등록</button>
+			</div>
 		</form>
 	</div>
 
@@ -122,8 +129,8 @@
 					<!-- 댓글 번호 <span class="mr-3">${message.articleNo}</span> -->
 
 					<div class="media-body">
-						<h5 class="mt-0">${message.writerName }</h5>
-						${message.message } 
+						<h5 class="mt-0"><strong>${message.writerName }</strong></h5>
+						${fn:replace(message.message, cn, br) }
 					</div>
 					
 					<c:if test="${authUser.name eq message.writerName}">

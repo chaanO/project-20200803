@@ -39,9 +39,13 @@
 	</button>
 <h1>중앙문고</h1>
 <h5>게시글이 삭제되었습니다.</h5>
-<form action="login.do" method="post">
-	    <button type="button" class="btn btn-secondary" onclick="location.href = '${ctxPath }/article/list.do' ">목록으로</button>
-</form>
-</div>
+		<div align="center">
+			<form action="login.do" method="post">
+				<button type="button" class="btn btn-secondary"
+					onclick="location.href = '${ctxPath }/article/list.do'"
+					align="center">목록으로</button>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
