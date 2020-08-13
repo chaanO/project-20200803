@@ -67,12 +67,21 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${1 }"><strong>${result[1].bookName }</strong></a> <br />
-			    	전지민 저 | 비타북스 | 2020.03.02 <br />
+			    	도종환, 나태주 외 3명 저 | 북카라반 | 2019.01.14 <br />
 			    	가격 : ${result[1].price }원
 			   	</small>
    			</p>
       </td>
-      <td>@mdo</td>
+      <td>
+      	<img onclick="location.href='buy.jsp?no=${2}'" class="btn" src="${result[2].image }" height="200">
+ 			<p>
+			   	<small style="text-align:center">
+			    	<a href="buy.jsp?no=${2 }"><strong>${result[2].bookName }</strong></a> <br />
+			    	전지민 저 | 비타북스 | 2020.03.02 <br />
+			    	가격 : ${result[2].price }원
+			   	</small>
+   			</p>
+      </td>
     </tr>
     <thead>
     <tr>
