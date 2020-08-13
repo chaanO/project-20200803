@@ -14,14 +14,15 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-<title>삭제</title>
+<title>Insert title here</title>
 </head>
 <body>
-<form action="delete.do?no=${delReq.articleNumber }" method="post">
-암호: <input type="password" name ="password" /> <br />
-<c:if test="${errors.password}">암호를 입력하세요.</c:if>
-<c:if test="${errors.invalidPassword}">암호가 일치하지 않습니다.</c:if>
-<input type="submit" value="삭제" />
+<form action="modify.do?no=${modReq.articleNumber}" method = "post">
+<p>번호 : <br />${modReq.articleNumber }</p>
+<p>제목 : <br /><input type="text" name = "title" value="${modReq.title }" />
+	<c:if test="${errors.title }">제목을 입력하세요</c:if> </p>
+<p>내용 : <br /> <textarea name="content" rows="5" cols="30"></textarea> </p>
+<input type="submit" value="글 수정" />
 </form>
 </body>
 </html>

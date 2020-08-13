@@ -19,17 +19,19 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script
 	src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-<title>Insert title here</title>
+<title>중앙문고</title>
 <style>
 
 #ex1 {
-	width: 150px;
+	width: 100px;
+	height: 40px;
 	text-align: left;
 	box-sizing: border-box
 }
 
 #ex2 {
-	width: 800px;
+	width: 400px;
+	height: 40px;
 	text-align: left;
 	box-sizing: border-box
 }
@@ -50,10 +52,10 @@
 <body>
 	<my:navbar />
 	<br>
-	<h1>문의하신 내용입니다.</h1>
-
 <div class="container-fluid" >
-	<table border="1" width="100%">
+	<h2>문의하신 내용입니다.</h2>
+	<br />
+	<table class="table table-bordered" border="1" width="100%">
 		<tr>
 			<td id="ex1">글 번호</td>
 			<td id="ex2">${articleData.article.number }</td>
@@ -68,30 +70,33 @@
 		</tr>
 		<tr>
 			<td id="ex1">내용</td>
-			<td colspan="4">
-			${articleData.content }</td>
+			<td colspan="4" >${articleData.content }</td>
 
 		</tr>
 		<tr>
-			<td colspan="4"><c:set var="pageNo"
+			<td colspan="4" >
+			<c:set var="pageNo"
 					value="${empty param.pageNo ? '1' : param.pageNo }" /> <a
-				href="list.do?pageNo=${pageNo}">[목록]</a> <c:if
-					test="${authUser.id == articleData.article.writer.id}">
-					<a href="modify.do?no=${articleData.article.number}">[게시글수정]</a>
-					<a href="delete.do?no=${articleData.article.number}">[게시글삭제]</a>
-				</c:if></td>
+				class="btn btn-secondary" href="list.do?pageNo=${pageNo}" role="button">목록</a> 
+				
+				<c:if test="${authUser.id == articleData.article.writer.id}">
+					<a class="btn btn-secondary" href="modify.do?no=${articleData.article.number}" role="button">수정</a>
+					<a class="btn btn-secondary" href="delete.do?no=${articleData.article.number}" role="button">삭제</a>
+				</c:if>
+				
+				
+				</td>
 		</tr>
 	</table>
 
 
 
-	<div>
 		<!-- 댓글 입력 -->
-		<h1>댓글</h1>
+	<div >
 		<form action="write" method="post">
-
+			<br />
 			<div class="form-group">
-				<label for="exampleFormControlTextarea1">댓글내용:</label>
+				<h3>답변</h3>
 				<textarea required="required" name="message" class="form-control"
 					id="exampleFormControlTextarea1" rows="3"></textarea>
 			</div>
@@ -102,7 +107,7 @@
 				type="hidden" name="articleNo" value="${param.no }" />
 
 
-			<button type="submit" class="btn btn-primary">댓글 등록</button>
+			<button type="submit" class="btn btn-secondary" >댓글 등록</button>
 		</form>
 	</div>
 
@@ -118,16 +123,20 @@
 
 					<div class="media-body">
 						<h5 class="mt-0">${message.writerName }</h5>
-
-						${message.message } <a data-toggle="modal" href="#exampleModal"
-							data-message-id="${message.commentNo }" class="btn-delete">삭제하기</a>
+						${message.message } 
 					</div>
+					
+					<c:if test="${authUser.name eq message.writerName}">
+						<a data-toggle="modal" href="#exampleModal"
+							data-message-id="${message.commentNo }" class="btn-delete">삭제하기</a>
+					</c:if>			
+							
 				</div>
 			</c:if>
 		</c:forEach>
+		
+		
 	</div>
-
-	<hr />
 
 
 	<!-- 삭제 -->
