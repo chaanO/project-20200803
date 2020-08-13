@@ -27,6 +27,7 @@ public class DeleteUserHandler implements CommandHandler{
 			return null;
 		}
 	}
+	
  
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
 		return FORM_VIEW;

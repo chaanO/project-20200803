@@ -31,7 +31,7 @@
 <div class="container-fluid shadow p-3">
    	<form>
 	  	<div class="form-group">
-		    <h4>탈퇴 완료.</h2>
+		    <h4>탈퇴 완료.</h4>
 	  	</div>
 	  	<br />
 	  	<br />

@@ -92,10 +92,13 @@
 			<c:forEach var="article" items="${articlePage.content}">
 				<tr>
 					<th id="ex1">${article.number }</th>
-					<td id="ex2" class="t"><a
-						href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}">
-							<c:out value="${article.title}"></c:out>
-					</a></td>
+					
+					<!--  제목  -->
+					<td id="ex2" class="t">
+					<a href="read.do?no=${article.number}&pageNo=${articlePage.currentPage}">
+						<c:out value="${article.title}"></c:out></a>
+					</td>	
+					
 					<td id="ex3">${article.writer.name}</td>
 					<td id="ex4">${article.regDateCustom}</td>
 					<td id="ex5">${article.readCount}</td>

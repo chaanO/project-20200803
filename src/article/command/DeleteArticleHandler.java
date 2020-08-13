@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -62,6 +63,7 @@ public class DeleteArticleHandler implements CommandHandler{
 	}
 	private String processSubmit(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		User authUser = (User) req.getSession().getAttribute("authUser");
+		
 		String noVal = req.getParameter("no");
 		int no = Integer.parseInt(noVal);
 		

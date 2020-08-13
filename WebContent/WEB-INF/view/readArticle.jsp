@@ -5,6 +5,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="u" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
+
+<%
+	//줄바꿈
+	pageContext.setAttribute("br", "<br/>");
+	pageContext.setAttribute("cn", "\n");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,17 +25,19 @@
 	src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script
 	src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-<title>Insert title here</title>
+<title>중앙문고</title>
 <style>
 
 #ex1 {
-	width: 150px;
+	width: 100px;
+	height: 40px;
 	text-align: left;
 	box-sizing: border-box
 }
 
 #ex2 {
-	width: 800px;
+	width: 400px;
+	height: 40px;
 	text-align: left;
 	box-sizing: border-box
 }
@@ -50,10 +58,10 @@
 <body>
 	<my:navbar />
 	<br>
-	<h1>문의하신 내용입니다.</h1>
-
 <div class="container-fluid" >
-	<table border="1" width="100%">
+	<h2>문의하신 내용입니다.</h2>
+	<br />
+	<table class="table table-bordered" border="1" width="100%">
 		<tr>
 			<td id="ex1">글 번호</td>
 			<td id="ex2">${articleData.article.number }</td>
@@ -68,41 +76,45 @@
 		</tr>
 		<tr>
 			<td id="ex1">내용</td>
-			<td colspan="4">
-			${articleData.content }</td>
+			<td colspan="4" >${fn:replace(articleData.content,cn, br) }</td>
 
 		</tr>
 		<tr>
-			<td colspan="4"><c:set var="pageNo"
+	</table>
+	<table border="0" align="right">
+			<td>
+			<c:set var="pageNo"
 					value="${empty param.pageNo ? '1' : param.pageNo }" /> <a
-				href="list.do?pageNo=${pageNo}">[목록]</a> <c:if
-					test="${authUser.id == articleData.article.writer.id}">
-					<a href="modify.do?no=${articleData.article.number}">[게시글수정]</a>
-					<a href="delete.do?no=${articleData.article.number}">[게시글삭제]</a>
-				</c:if></td>
+				class="btn btn-secondary" href="list.do?pageNo=${pageNo}" role="button">목록</a> 
+				
+				<c:if test="${authUser.id == articleData.article.writer.id}">
+					<a class="btn btn-secondary" href="modify.do?no=${articleData.article.number}" role="button">수정</a>
+					<a class="btn btn-secondary" href="delete.do?no=${articleData.article.number}" role="button">삭제</a>
+				</c:if>
+				
+				
+				</td>
 		</tr>
 	</table>
+<br />
 
-
-
-	<div>
 		<!-- 댓글 입력 -->
-		<h1>댓글</h1>
+	<div>
 		<form action="write" method="post">
-
-			<div class="form-group">
-				<label for="exampleFormControlTextarea1">댓글내용:</label>
+			<br />
+			<h3>답변</h3>
+			<div class="form-group" align="right">
 				<textarea required="required" name="message" class="form-control"
-					id="exampleFormControlTextarea1" rows="3"></textarea>
-			</div>
+					id="exampleFormControlTextarea1" rows="6"></textarea>
 
 			<input type="hidden" name="name" value="${authUser.name }" /> <input
 				type="hidden" name="no" value="${param.no }" /> <input
 				type="hidden" name="pageNo" value="${param.pageNo }" /> <input
 				type="hidden" name="articleNo" value="${param.no }" />
+	<br />
 
-
-			<button type="submit" class="btn btn-primary">댓글 등록</button>
+			<button type="submit" class="btn btn-secondary">댓글 등록</button>
+			</div>
 		</form>
 	</div>
 
@@ -117,17 +129,21 @@
 					<!-- 댓글 번호 <span class="mr-3">${message.articleNo}</span> -->
 
 					<div class="media-body">
-						<h5 class="mt-0">${message.writerName }</h5>
-
-						${message.message } <a data-toggle="modal" href="#exampleModal"
-							data-message-id="${message.commentNo }" class="btn-delete">삭제하기</a>
+						<h5 class="mt-0"><strong>${message.writerName }</strong></h5>
+						${fn:replace(message.message, cn, br) }
 					</div>
+					
+					<c:if test="${authUser.name eq message.writerName}">
+						<a data-toggle="modal" href="#exampleModal"
+							data-message-id="${message.commentNo }" class="btn-delete">삭제하기</a>
+					</c:if>			
+							
 				</div>
 			</c:if>
 		</c:forEach>
+		
+		
 	</div>
-
-	<hr />
 
 
 	<!-- 삭제 -->
