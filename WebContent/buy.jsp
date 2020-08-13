@@ -26,15 +26,15 @@
 
 <my:navbar />
 
+<form action="cart.do" method="post">
 <div class="container dark-grey-text mt-5 shadow p-3" style="background-color: white;">
-
       <!--Grid row-->
       <div class="row wow fadeIn">
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="${result[param.no].image }" class="img-fluid" alt="">
+          <img src="${result[param.no].image }" height="650" alt="">
 
         </div>
         <!--Grid column-->
@@ -44,10 +44,13 @@
 
           <!--Content-->
           <div class="p-4">
-			
 			<h1 class="lead font-weight-bold">도서 구매</h1>
 			
+			<br>
+			
 			<hr />
+			
+			<br>
 			
 			<h1 class="lead font-weight-bold">
 				<input type="hidden" name="bookId" value="${result[param.no].bookId }" />
@@ -56,33 +59,38 @@
             <p class="lead">
 	            <span class="mr-1">
 	               <input type="hidden" name="price" value="${result[param.no].price}">판매가 : ${result[param.no].price}원
+	               <input type="hidden" name="memberId" value="${authUser.id }">
 	            </span>
             </p>
 
-            
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-              sint voluptatibus!
-              Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
-
-            <form class="d-flex justify-content-left">
+            <!--Content-->
+			<p>${result[param.no].writer }</p>
+            <p>${result[param.no].content }</p>
+			
+			<br>
+			
+			<hr>
+			
+			<br>
+			
+            <div class="d-flex justify-content-left">
               <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p waves-effect waves-light" type="submit">Add to cart
+              <input type="number" name="amount" value="${param.amount }" aria-label="Search" class="form-control mr-2" style="width: 100px">
+              <button class="btn btn-primary btn-md mr-2 p waves-effect waves-light" type="submit">장바구니 담기
                 <i class="fas fa-shopping-cart ml-1"></i>
               </button>
+              <button class="btn btn-danger btn-md mr-2 p waves-effect waves-light" type="button">바로결제
+              	<i class="fas fa-credit-card"></i>
+              </button>
 
-            </form>
+            </div>
 
           </div>
-          <!--Content-->
-
+          
+			</div>
         </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
 </div>
+</form>
 
 <%-- <div class="container">
 <form action="cart.do" method="post">
