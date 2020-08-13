@@ -13,13 +13,13 @@
         <a class="nav-link" href="${ctxPath }/bookpage1.jsp">시/에세이</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">소설</a>
+        <a class="nav-link" href="${ctxPath }/bookpage2.jsp">소설</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">경제/경영</a>
+        <a class="nav-link" href="${ctxPath }/bookpage3.jsp">경제/경영</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">자기계발</a>
+        <a class="nav-link" href="${ctxPath }/bookpage4.jsp">자기계발</a>
       </li>
     </ul>
     

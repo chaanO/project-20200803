@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags" %>
-<%@page import="cart.dao.ProductDao"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="cart.model.Product"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="cart.dao.ProductDao"%>
 
 <%
 	ProductDao pDao = new ProductDao();
@@ -22,7 +22,7 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-<title>시/에세이</title>
+<title>경제/경영</title>
 <style>
 		
 	.btn {cursor:pointer;}
@@ -47,7 +47,7 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">시/에세이</th>
+      <th scope="col">경제/경영</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -55,65 +55,65 @@
   <tbody>
     <tr>
       <td>
-      	<img onclick="location.href='buy.jsp?no=${0}'" class="btn" src="${result[0].image }" height="200">
+      	<img onclick="location.href='buy.jsp?no=${12}'" class="btn" src="${result[12].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
-			    	<a href="buy.jsp?no=${0 }"><strong>${result[0].bookName }</strong></a> <br />
-			    	김서경 저 | 메이븐 | 2019.07.01 <br />
-			    	가격 : ${result[0].price }원
+			    	<a href="buy.jsp?no=${12 }"><strong>${result[12].bookName }</strong></a> <br />    	
+			    	곽해선 저 | 혜다 | 2019.12.25 <br />
+			    	가격 : ${result[12].price }원
 			   	</small>
    			</p>
       </td>
       <td>
-      	<img onclick="location.href='buy.jsp?no=${1}'" class="btn" src="${result[1].image }" height="200">
+      	<img onclick="location.href='buy.jsp?no=${13}'" class="btn" src="${result[13].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
-			    	<a href="buy.jsp?no=${1 }"><strong>${result[1].bookName }</strong></a> <br />
-			    	도종환, 나태주 외 3명 저 | 북카라반 | 2019.01.14 <br />
-			    	가격 : ${result[1].price }원
+			    	<a href="buy.jsp?no=${13 }"><strong>${result[13].bookName }</strong></a> <br />
+			    	김민구 저 | 길벗 | 2019.03.11 <br />
+			    	가격 : ${result[13].price }원
 			   	</small>
    			</p>
       </td>
       <td>
-      	<img onclick="location.href='buy.jsp?no=${2}'" class="btn" src="${result[2].image }" height="200">
+      	<img onclick="location.href='buy.jsp?no=${14}'" class="btn" src="${result[14].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
-			    	<a href="buy.jsp?no=${2 }"><strong>${result[2].bookName }</strong></a> <br />
-			    	전지민 저 | 비타북스 | 2020.03.02 <br />
-			    	가격 : ${result[2].price }원
+			    	<a href="buy.jsp?no=${14 }"><strong>${result[14].bookName }</strong></a> <br />
+			    	주언규 저 | 21세기북스 | 2020.07.22 <br />
+			    	가격 : ${result[14].price }원
 			   	</small>
    			</p>
       </td>
     </tr>
- 
+
     <tr>
       <td>
-      	<img onclick="location.href='buy.jsp?no=${3}'" class="btn" src="${result[3].image }" height="200">
+      	<img onclick="location.href='buy.jsp?no=${15}'" class="btn" src="${result[15].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
-			    	<a href="buy.jsp?no=${3 }"><strong>${result[3].bookName }</strong></a> <br />
-			    	김수현 저 | 놀(다산북스) | 2020.05.15 <br />
-			    	가격 : ${result[3].price }원
+			    	<a href="buy.jsp?no=${15 }"><strong>${result[15].bookName }</strong></a> <br />
+			    	김승호 저 | 스노우폭스북스 | 2020.06.15 <br />
+			    	가격 : ${result[15].price }원
 			   	</small>
    			</p>
       </td>
       <td>
-      	<img onclick="location.href='buy.jsp?no=${4}'" class="btn" src="${result[4].image }" height="200">
+      	<img onclick="location.href='buy.jsp?no=${16}'" class="btn" src="${result[16].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
-			    	<a href="buy.jsp?no=${4 }"><strong>${result[4].bookName }</strong></a> <br />
-			    	색과 체 저 | 떠오름 | 2020.06.23 <br />
-			    	가격 : ${result[4].price }원
+			    	<a href="buy.jsp?no=${16 }"><strong>${result[16].bookName }</strong></a> <br />
+			    	이학연 저 | 넥서스BIZ | 2020.03.08 <br />
+			    	가격 : ${result[16].price }원
 			   	</small>
    			</p>
       </td>
       <td>
-      	<img onclick="location.href='buy.jsp?no=${5}'" class="btn" src="${result[5].image }" height="200">
+      	<img onclick="location.href='buy.jsp?no=${17}'" class="btn" src="${result[17].image }" height="200">
  			<p>
 			   	<small style="text-align:center">
-			    	<a href="buy.jsp?no=${5 }"><strong>${result[5].bookName }</strong></a> <br />
-			    	을냥이 저 | 스튜디오오드리 | 2020.04.22 <br />
-			    	가격 : ${result[5].price }원
+			    	<a href="buy.jsp?no=${17 }"><strong>${result[17].bookName }</strong></a> <br />
+			    	권도균 저 | 위즈덤하우스 | 2015.08.05 <br />
+			    	가격 : ${result[17].price }원
 			   	</small>
    			</p>
       </td>
