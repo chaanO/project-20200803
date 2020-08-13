@@ -44,7 +44,7 @@ public class ModifyArticleHandler implements CommandHandler {
 				res.sendError(HttpServletResponse.SC_FORBIDDEN);
 				return null;
 			}
-			ModifyRequest modReq = new ModifyRequest(authUser.getId(), no, articleData.getArticle().getTitle(), articleData.getContent());
+			ModifyRequest modReq = new ModifyRequest(authUser.getId(), no, articleData.getArticle().getTitle(), articleData.getContent(), authUser.getName());
 			req.setAttribute("modReq", modReq);
 			return FORM_VIEW;
 		}catch (ArticleNotFoundException e) {
@@ -63,7 +63,7 @@ public class ModifyArticleHandler implements CommandHandler {
 		String noVal = req.getParameter("no");
 		int no = Integer.parseInt(noVal);
 		
-		ModifyRequest modReq = new ModifyRequest(authUser.getId(), no, req.getParameter("title"), req.getParameter("content"));
+		ModifyRequest modReq = new ModifyRequest(authUser.getId(), no, req.getParameter("title"), req.getParameter("content"), authUser.getName());
 		req.setAttribute("modReq", modReq);
 		
 		Map<String, Boolean> errors = new HashMap<>();
