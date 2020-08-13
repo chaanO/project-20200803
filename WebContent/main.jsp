@@ -36,21 +36,25 @@
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="images/누구나 .jpg" alt="" style="width:100%;">
+    <img src="images/누구나.jpg" alt="시" style="width:100%;">
     <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+      <h3><b>누구나 시 하나쯤 가슴에 품고 산다.</b></h3>
+      <h5>김선경 저, <span class="w3-opacity">July 1, 2019</span></h5>
     </div>
 
     <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      	<p>
+      		지금 가슴에 품고 있는 시는 무엇인가요?<br /><br />
+
+			시가 늘 곁에 있었기에, 하늘의 별을 바라볼 수 있었고 발밑의 꽃을 잊지 않을 수 있었다고 말하는 30년 경력의 출판 에디터, 
+			《서른 살엔 미처 몰랐던 것들》의 저자 김선경이 자신의 삶을 뻔한 결말로부터 구해 준 고마운 시들에 대해 이야기하는 『누구나 시 하나쯤 가슴에 품고 산다』. 
+			‘아 힘들다’ 소리가 나올 때마다 어떤 시의 한 구절을 떠올리며 힘을 내곤 했던 저자가 직접 고른 101편의 시를 담고 있다. 삶의 고단함이야 서로 뻔히 아는 것. 
+			나는 이렇게 살아왔노라 대신 나는 이런 시를 읽어 왔다고 고백한다면 더 멋지지 않을까 하는 생각에서 출발한 책으로, 그동안 아껴 온 가슴속 시를 전달하며 독자들 
+			역시 저마다 품은 가슴속 시를 함께 나누면서 서로의 어깨를 가만 두드려 주기를 기대하고 있다.
+		</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments &nbsp;</b> <span class="w3-tag">0</span></span></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border" onclick="location='bookpage1.jsp'"><b>READ MORE »</b></button></p>
         </div>
       </div>
     </div>
