@@ -105,6 +105,8 @@ public class CartDao {
 		pro.setBookName(rs.getString("bookName"));
 		pro.setImage(rs.getString("image"));
 		pro.setPrice(rs.getInt("price"));
+		pro.setWriter(rs.getString("writer"));
+		pro.setContent(rs.getString("content"));
 		
 		return new Cart(pro,
 				rs.getInt("bookId"), rs.getInt("amount"), rs.getString("memberId"), toDate(rs.getTimestamp("regdate")));

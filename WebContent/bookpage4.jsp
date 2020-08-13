@@ -59,7 +59,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${18 }"><strong>${result[18].bookName }</strong></a> <br />    	
-			    	제임스 클리어 저 | 비즈니스북스 | 2019.02.26 <br />
+			    	${result[18].writer } <br />
 			    	가격 : ${result[18].price }원
 			   	</small>
    			</p>
@@ -69,7 +69,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${19 }"><strong>${result[19].bookName }</strong></a> <br />
-			    	레몬심리 저 | 갤리온 | 2020.06.30 <br />
+			    	${result[19].writer } <br />
 			    	가격 : ${result[19].price }원
 			   	</small>
    			</p>
@@ -79,7 +79,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${20 }"><strong>${result[20].bookName }</strong></a> <br />
-			    	벤쌤 저 | 체인지업 | 2020.07.23 <br />
+			    	${result[20].writer } <br />
 			    	가격 : ${result[20].price }원
 			   	</small>
    			</p>
@@ -92,7 +92,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${21 }"><strong>${result[21].bookName }</strong></a> <br />
-			    	김윤나 저 | 카시오페아 | 2017.09.22 <br />
+			    	${result[21].writer } <br />
 			    	가격 : ${result[21].price }원
 			   	</small>
    			</p>
@@ -102,7 +102,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${22 }"><strong>${result[22].bookName }</strong></a> <br />
-			    	마크 맨슨 저 | 갤리온 | 2017.10.27 <br />
+			    	${result[22].writer } <br />
 			    	가격 : ${result[22].price }원
 			   	</small>
    			</p>
@@ -112,7 +112,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${23 }"><strong>${result[23].bookName }</strong></a> <br />
-			    	김범준 저 | 생각의 길 | 2020.07.15 <br />
+			    	${result[23].writer } <br />
 			    	가격 : ${result[23].price }원
 			   	</small>
    			</p>

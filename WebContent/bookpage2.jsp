@@ -59,7 +59,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${6 }"><strong>${result[6].bookName }</strong></a> <br />    	
-			    	김정희 저 | 혜다 | 2018.03.23 <br />
+			    	${result[6].writer } <br />
 			    	가격 : ${result[6].price }원
 			   	</small>
    			</p>
@@ -69,7 +69,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${7 }"><strong>${result[7].bookName }</strong></a> <br />
-			    	장류진 저 | 창비 | 2019.10.25 <br />
+			    	${result[7].writer } <br />
 			    	가격 : ${result[7].price }원
 			   	</small>
    			</p>
@@ -79,7 +79,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${8 }"><strong>${result[8].bookName }</strong></a> <br />
-			    	루시 모드 몽고메리 저 | 더모던 | 2019.05.10 <br />
+			    	${result[8].writer } <br />
 			    	가격 : ${result[8].price }원
 			   	</small>
    			</p>
@@ -92,7 +92,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${9 }"><strong>${result[9].bookName }</strong></a> <br />
-			    	프레드릭 배크만 저 | 다산책방 | 2015.05.20 <br />
+			    	${result[9].writer } <br />
 			    	가격 : ${result[9].price }원
 			   	</small>
    			</p>
@@ -102,7 +102,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${10 }"><strong>${result[10].bookName }</strong></a> <br />
-			    	김려령 저 | 창비 | 2008.03.21 <br />
+			    	${result[10].writer } <br />
 			    	가격 : ${result[10].price }원
 			   	</small>
    			</p>
@@ -112,7 +112,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${11 }"><strong>${result[11].bookName }</strong></a> <br />
-			    	이희영 저 | 창비 | 2019.04.19 <br />
+			    	${result[11].writer } <br />
 			    	가격 : ${result[11].price }원
 			   	</small>
    			</p>

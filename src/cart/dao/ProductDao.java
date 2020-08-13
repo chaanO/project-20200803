@@ -26,6 +26,8 @@ public class ProductDao {
 				pro.setBookName(rs.getString("bookName"));
 				pro.setPrice(rs.getInt("price"));
 				pro.setImage(rs.getString("image"));
+				pro.setWriter(rs.getString("writer"));
+				pro.setContent(rs.getString("content"));
 
 				return pro;
 			}
@@ -55,6 +57,8 @@ public class ProductDao {
 					pro.setBookName(rs.getString("bookName"));
 					pro.setPrice(rs.getInt("price"));
 					pro.setImage(rs.getString("image"));
+					pro.setWriter(rs.getString("writer"));
+					pro.setContent(rs.getString("content"));
 				pdlist.add(pro);
 			}
 			return pdlist;

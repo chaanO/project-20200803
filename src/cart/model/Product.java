@@ -5,6 +5,8 @@ public class Product {
 	private String bookName;
 	private int price;
 	private String image;
+	private String writer;
+	private String content;
 
 	public int getBookId() {
 		return bookId;
@@ -29,5 +31,17 @@ public class Product {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
 	}
 }

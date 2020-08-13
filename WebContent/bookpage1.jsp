@@ -59,7 +59,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${0 }"><strong>${result[0].bookName }</strong></a> <br />
-			    	김선경 저 | 메이븐 | 2019.07.01 <br />
+			    	${result[0].writer } <br />
 			    	가격 : ${result[0].price }원
 			   	</small>
    			</p>
@@ -69,7 +69,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${1 }"><strong>${result[1].bookName }</strong></a> <br />
-			    	도종환, 나태주 외 3명 저 | 북카라반 | 2019.01.14 <br />
+			    	${result[1].writer } <br />
 			    	가격 : ${result[1].price }원
 			   	</small>
    			</p>
@@ -79,7 +79,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${2 }"><strong>${result[2].bookName }</strong></a> <br />
-			    	전지민 저 | 비타북스 | 2020.03.02 <br />
+			    	${result[2].writer } <br />
 			    	가격 : ${result[2].price }원
 			   	</small>
    			</p>
@@ -92,7 +92,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${3 }"><strong>${result[3].bookName }</strong></a> <br />
-			    	김수현 저 | 놀(다산북스) | 2020.05.15 <br />
+			    	${result[3].writer } <br />
 			    	가격 : ${result[3].price }원
 			   	</small>
    			</p>
@@ -102,7 +102,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${4 }"><strong>${result[4].bookName }</strong></a> <br />
-			    	색과 체 저 | 떠오름 | 2020.06.23 <br />
+			    	${result[4].writer } <br />
 			    	가격 : ${result[4].price }원
 			   	</small>
    			</p>
@@ -112,7 +112,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${5 }"><strong>${result[5].bookName }</strong></a> <br />
-			    	을냥이 저 | 스튜디오오드리 | 2020.04.22 <br />
+			    	${result[5].writer } <br />
 			    	가격 : ${result[5].price }원
 			   	</small>
    			</p>

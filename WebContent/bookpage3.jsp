@@ -59,7 +59,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${12 }"><strong>${result[12].bookName }</strong></a> <br />    	
-			    	곽해선 저 | 혜다 | 2019.12.25 <br />
+			    	${result[12].writer } <br />
 			    	가격 : ${result[12].price }원
 			   	</small>
    			</p>
@@ -69,7 +69,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${13 }"><strong>${result[13].bookName }</strong></a> <br />
-			    	김민구 저 | 길벗 | 2019.03.11 <br />
+			    	${result[13].writer } <br />
 			    	가격 : ${result[13].price }원
 			   	</small>
    			</p>
@@ -79,7 +79,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${14 }"><strong>${result[14].bookName }</strong></a> <br />
-			    	주언규 저 | 21세기북스 | 2020.07.22 <br />
+			    	${result[14].writer } <br />
 			    	가격 : ${result[14].price }원
 			   	</small>
    			</p>
@@ -92,7 +92,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${15 }"><strong>${result[15].bookName }</strong></a> <br />
-			    	김승호 저 | 스노우폭스북스 | 2020.06.15 <br />
+			    	${result[15].writer } <br />
 			    	가격 : ${result[15].price }원
 			   	</small>
    			</p>
@@ -102,7 +102,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${16 }"><strong>${result[16].bookName }</strong></a> <br />
-			    	이학연 저 | 넥서스BIZ | 2020.03.08 <br />
+			    	${result[16].writer } <br />
 			    	가격 : ${result[16].price }원
 			   	</small>
    			</p>
@@ -112,7 +112,7 @@
  			<p>
 			   	<small style="text-align:center">
 			    	<a href="buy.jsp?no=${17 }"><strong>${result[17].bookName }</strong></a> <br />
-			    	권도균 저 | 위즈덤하우스 | 2015.08.05 <br />
+			    	${result[17].writer } <br />
 			    	가격 : ${result[17].price }원
 			   	</small>
    			</p>
