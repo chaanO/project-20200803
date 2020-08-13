@@ -22,11 +22,69 @@
 	})
 </script>
 </head>
-<body>
+<body class="bg-light">
 
 <my:navbar />
 
-<div class="container">
+<div class="container dark-grey-text mt-5 shadow p-3" style="background-color: white;">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <img src="${result[param.no].image }" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+			
+			<h1 class="lead font-weight-bold">도서 구매</h1>
+			
+			<hr />
+			
+			<h1 class="lead font-weight-bold">
+				<input type="hidden" name="bookId" value="${result[param.no].bookId }" />
+            	<input type="hidden" name="bookName" value="${param.bookName }">${result[param.no].bookName}
+			</h1>
+            <p class="lead">
+	            <span class="mr-1">
+	               <input type="hidden" name="price" value="${result[param.no].price}">판매가 : ${result[param.no].price}원
+	            </span>
+            </p>
+
+            
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
+              sint voluptatibus!
+              Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
+
+            <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <button class="btn btn-primary btn-md my-0 p waves-effect waves-light" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+</div>
+
+<%-- <div class="container">
 <form action="cart.do" method="post">
 <img src="${result[param.no].image }" height="200" style="float:left; margin-right: 20px; margin-top: 10px; margin-left:20px">
 	<div class="jumbotron">
@@ -64,6 +122,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> --%>
 </body>
 </html>
