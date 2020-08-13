@@ -23,7 +23,7 @@
 		text-align:center;
 	}
 	 
-	h5 {
+	div {
 		text-align:center;
 	}
 </style>
@@ -37,10 +37,9 @@
 <h5>장바구니 담기 완료</h5>
 <form action="" method="post">
 	<div class="form-group">
-		
-<input type="button" class="btn btn-dark" onclick="location='${ctxPath}/list.do'" value="장바구니 확인" />
-
-</div>
+		<button type="button" class="btn btn-dark" onclick="location='${ctxPath}/list.do'">장바구니 확인</button>
+		<%-- <input type="button" class="btn btn-dark" onclick="location='${ctxPath}/list.do'" value="장바구니 확인" /> --%>
+	</div>
 </form>
 </div>
 
