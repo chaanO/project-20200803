@@ -79,7 +79,7 @@
               <button class="btn btn-primary btn-md mr-2 p waves-effect waves-light" type="submit">장바구니 담기
                 <i class="fas fa-shopping-cart ml-1"></i>
               </button>
-              <button class="btn btn-danger btn-md mr-2 p waves-effect waves-light" type="button">바로결제
+              <button class="btn btn-danger btn-md mr-2 p waves-effect waves-light" data-toggle="modal" data-target="#staticBackdrop" type="button">바로결제
               	<i class="fas fa-credit-card"></i>
               </button>
 
@@ -91,6 +91,26 @@
         </div>
 </div>
 </form>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">결제</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	 결제 완료.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="location='main.jsp'">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%-- <div class="container">
 <form action="cart.do" method="post">
