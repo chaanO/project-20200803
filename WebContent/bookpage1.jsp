@@ -31,8 +31,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	
 	 a:link { color: black; text-decoration: none;}
 	 a:visited { color: black; text-decoration: none;}
-	 a:hover { color: black; text-decoration: unde
-	 rline;}
+	 a:hover { color: black; text-decoration: underline;}
 	 
 	 .container {
 		background-color:white;
