@@ -31,23 +31,46 @@
 body { font-family: 'Noto Sans KR', sans-serif; }
 
 #ex1 {
-	width: 100px;
+	width: 20px;
+	height: 40px;
+	text-align: left;
+	box-sizing: border-box;
+	background-color: lightgrey;
+}
+
+#ex2 {
+	width: 500px;
 	height: 40px;
 	text-align: left;
 	box-sizing: border-box
 }
 
-#ex2 {
-	width: 400px;
+#ex4{
+	width: 20px;
 	height: 40px;
 	text-align: left;
-	box-sizing: border-box
+	box-sizing: border-box;
+}
+
+#ex3{
+	width: 20px;
+	height: 500px;
+	text-align: left;
+	background-color: lightgrey;
+	
 }
 
 .container-fluid {
 	background-color: white;
-	width: 1500px;
+	width: 1300px;
 }
+
+.table
+
+ {
+border: 5px solid;
+}
+
 </style>
 
 <script>
@@ -66,28 +89,29 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	<my:navbar />
 	<br>
 <div class="container-fluid" >
-	<br /><h2>문의하신 내용입니다.</h2>
+	<br /><h3><i class="fas fa-pencil-alt"></i>&nbsp;문의하신 내용입니다.</h3>
 	<br />
-	<table class="table table-bordered" border="1" width="100%">
+	<table class="table table-bordered" border="" width="100%">
 		<tr>
 			<td id="ex1">글 번호</td>
 			<td id="ex2">${articleData.article.number }</td>
 			<td id="ex1">조회수</td>
-			<td id="ex1">${articleData.article.readCount}</td>
+			<td id="ex4">${articleData.article.readCount}</td>
 		</tr>	
 		<tr>	
 			<td id="ex1">제목</td>
 			<td id="ex2">${articleData.article.title}</td>
 			<td id="ex1">작성자</td>
-			<td id="ex1">${articleData.article.writer.name }</td>
+			<td id="ex4">${articleData.article.writer.name }</td>
 		</tr>
 		<tr>
-			<td id="ex1">내용</td>
+			<td id="ex3">내용</td>
 			<td colspan="4" >${fn:replace(articleData.content,cn, br) }</td>
 
 		</tr>
 		<tr>
 	</table>
+
 	<table border="0" align="right">
 			<td>
 			<c:set var="pageNo"
@@ -101,7 +125,6 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 				
 				
 				</td>
-		</tr>
 	</table>
 <br />
 

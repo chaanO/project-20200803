@@ -46,10 +46,11 @@ h5 {
 			onclick="location='main.jsp'">
 			<i class="fas fa-chevron-left"></i>
 		</button>
-			<br />
-		<h3>비밀번호 확인</h3>	
+		<p>&nbsp;<p>
+		<h3 align="center"><i class="fas fa-exclamation-triangle"></i>&nbsp;탈퇴 전 꼭 확인해주세요!</h3>	
 		<hr />
-		<p>회원님의 본인확인을 위해, 현재 비밀번호를 확인해주세요.</p>
+		<p align="center">계정을 탈퇴하면 계정 및 모든 정보가 삭제되며 한번 가입했던 아이디로는 다시 가입할 수 없습니다.
+		 계속해서 탈퇴를 원하시면 현재 비밀번호를 입력해주세요</p>
 		<br /><br /><br />
 		<form action="" method="post">
 			<div class="form-group">

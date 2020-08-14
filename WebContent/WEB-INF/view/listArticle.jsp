@@ -77,9 +77,13 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	<my:navbar />
 
 	<div class="container-fluid" >
-	<h1>
-		<br />문의게시판
-	</h1>
+	<div>
+	<h2><br /><i class="fas fa-book-open"></i>&nbsp; 문의게시판</h2>
+	<br />
+	</div>
+	<div>
+	<p>문의사항이 있으면 자유롭게 남겨주세요</p>
+	</div>
 	<table class="table">
 		<thead class="thead-light">
 			<tr>
@@ -115,7 +119,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 			</c:forEach>
 			<tr>
 				<td colspan="5" id="ex6"><a class="btn btn-secondary"
-					href="write.do" role="button">글작성</a></td>
+					href="write.do" role="button"><i class="fas fa-pencil-alt"></i>&nbsp; 문의하기</a></td>
 			</tr>
 
 			<%--pagination --%>
