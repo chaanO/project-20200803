@@ -65,8 +65,6 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	width: 1300px;
 }
 
-
-
 </style>
 
 <script>
