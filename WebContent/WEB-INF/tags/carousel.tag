@@ -9,10 +9,10 @@
 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="2000">
-      <img src="images/누구나.jpg" class="d-block w-100 btn" height="300" alt="..." onclick="location.href='buy.jsp?no=${0}'">
+      <img src="images/킵.jpg" class="d-block w-100 btn" height="300" alt="..." onclick="location.href='buy.jsp?no=${14}'">
     </div>
     <div class="carousel-item" data-interval="2000">
-      <img src="images/킵.jpg" class="d-block w-100 btn" height="300" alt="..." onclick="location.href='buy.jsp?no=${14}'">
+      <img src="images/누구나.jpg" class="d-block w-100 btn" height="300" alt="..." onclick="location.href='buy.jsp?no=${0}'">
     </div>
     <div class="carousel-item" data-interval="2000">
       <img src="images/영어.jpg" class="d-block w-100 btn" height="300" alt="..." onclick="location.href='buy.jsp?no=${20}'">
