@@ -35,6 +35,7 @@ public class DeleteArticleService {
 			if(!delReq.getPassword().equals(member.getPassword())) {
 				throw new InvalidPasswordException();
 			}
+			
 			articleDao.delete(conn, delReq.getArticleNumber());
 			contentDao.delete(conn, delReq.getArticleNumber());
 			conn.commit();
