@@ -36,7 +36,8 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 <body class="bg-light">
 
 	<my:navbar />
-
+	<br>
+	<h1 style="text-align: center;"><i class="fas fa-book-open"></i>&nbsp;중앙문고</h1>
 	<div class="container">
 		<div class="row align-items-center my-5">
 			<div class="col-lg-7">
