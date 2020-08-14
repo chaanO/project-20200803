@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +14,13 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <title>로그인</title>
 <style>
 	.container-fluid {
 		background-color:white;
 		width:400px;
+		
 	}
 	
 	h1 {
@@ -28,16 +30,19 @@
 	h5 {
 		text-align:center;
 	}
+	
+body { font-family: 'Noto Sans KR', sans-serif; }
 </style>
+
 </head>
 
-<body class="bg-light">
-
+<body class="bg-light" >
+	<my:navbar />
+	<br>
 <div class="container-fluid shadow p-3">
 	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
   		<i class="fas fa-chevron-left"></i>
 	</button>
-<!-- <my:alert /> -->
 <h1>중앙문고</h1>
 <h5>로그인</h5>
 <form action="login.do" method="post">
@@ -56,9 +61,12 @@
 	    	<c:if test="${errors.password }">비밀번호를 입력하세요.</c:if>
 	    </small>
 	</div>
-<input type="submit" class="btn btn-dark" value="로그인" />
+<button type="submit" class="btn btn-dark btn-lg btn-block">로그인</button>
 </form>
 </div>
+
+
+
 </body>
 
 

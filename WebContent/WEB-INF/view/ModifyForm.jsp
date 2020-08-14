@@ -29,10 +29,10 @@
 <body>
 	<my:navbar />
 
+	<div class="container-fluid">
 	<h3>
 		<br />수정하실 내용을 입력해주세요
 	</h3>
-	<div class="container-fluid">
 
 		<form action="modify.do?no=${modReq.articleNumber}" method="post">
 			<div class="form-group">
