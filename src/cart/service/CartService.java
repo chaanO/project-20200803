@@ -19,8 +19,6 @@ public class CartService {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
 			
-			/* Cart cart = cartDao.checkBybookId(conn, cartReq.getBookId()); */
-			
 			cartDao.insert(conn, 
 					new Cart(
 							cartReq.getProduct(),
@@ -44,8 +42,6 @@ public class CartService {
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
-			
-			/* Cart cart = cartDao.checkBybookId(conn, cartReq.getBookId()); */
 			
 			Cart checkBook = cartDao.selectBybookId(conn, 
 							cartReq.getBookId()
