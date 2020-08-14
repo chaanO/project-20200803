@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +20,7 @@
 body { font-family: 'Noto Sans KR', sans-serif; }
 	.container-fluid {
 		background-color:white;
-		width:400px;
+		width:700px;
 	}
 	
 	h4 {
@@ -29,11 +29,16 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 </style>
 </head>
 <body class="bg-light">
-
+<my:navbar />
+	<br>
 <div class="container-fluid shadow p-3">
    	<form>
 	  	<div class="form-group">
-		    <h4>탈퇴 완료.</h4>
+	  	<p>&nbsp;<p>
+	  	<h1 align="center"><i class="fas fa-user-slash"></i></h1>
+		    <h4 align="center">탈퇴 완료</h4>
+		    <hr />
+		    <p align="center">그동안 이용해주셔서 감사했습니다.</p>
 	  	</div>
 	  	<br />
 	  	<br />

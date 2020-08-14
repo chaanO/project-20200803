@@ -43,8 +43,10 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
   		<i class="fas fa-chevron-left"></i>
 	</button>
-<h1>중앙문고</h1>
-<h5>로그인</h5>
+	<p>&nbsp;<p>
+<h1><i class="fas fa-user-check"></i></h1>
+<p align="center">아이디와 비밀번호를 입력해주세요.</p>
+<br />
 <form action="login.do" method="post">
 	<div class="form-group">
 		<label for="InputId">아이디</label>

@@ -55,7 +55,7 @@ h5 {
 				</form>
 			</div>
 		</div>
-		<h1>내 정보 관리</h1>
+		<h1 align="center"><i class="fas fa-user-edit"></i></h1>
 		<h5>새로운 회원 정보를 입력해주세요.</h5>
 		<br />
 		<form action="changeUser.do" method="post">

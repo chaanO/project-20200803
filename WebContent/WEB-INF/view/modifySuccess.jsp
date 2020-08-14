@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
 body { font-family: 'Noto Sans KR', sans-serif; }
 .container-fluid {
 	background-color: white;
-	width: 400px;
+	width: 500px;
 }
 
 h1 {
@@ -37,12 +37,17 @@ h5 {
 </style>
 </head>
 <body class="bg-light">
-
+	<my:navbar />
+	<br>
 	<div class="container-fluid shadow p-3">
-		<h1>중앙문고</h1>
-		<h5>게시글을 수정했습니다.</h5>
+		<br />
+			<br />
+		<h1><i class="fas fa-check-circle"></i></h1>
+		<h4 align="center">글이 정상적으로 수정되었습니다</h4>
+		<hr />
+		<p align="center">답변은 평균 2~4일 정도 소요됩니다.</p>
+		<br />
 		<div align="center">
-
 				<button type="button" class="btn btn-secondary"
 					onclick="location.href ='${ctxPath }/article/read.do?no=${param.no}'">작성
 					글 확인하기</button>

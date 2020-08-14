@@ -39,8 +39,9 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
   		<i class="fas fa-chevron-left"></i>
 	</button>
-	<h1>중앙문고</h1>
-	<h5>회원가입</h5>
+	<p>&nbsp;<p>
+	<h1><i class="fas fa-user-plus"></i></h1>
+	<p align="center">회원님의 소중한 정보를 입력해주세요</p>
 	<form action="join.do" method="post">	
 	  <div class="form-group">
 	    <label for="InputId">아이디</label>

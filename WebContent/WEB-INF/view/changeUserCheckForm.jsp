@@ -46,10 +46,10 @@ h5 {
 			onclick="location='main.jsp'">
 			<i class="fas fa-chevron-left"></i>
 		</button>
-			<br />
-		<h3>비밀번호 확인</h3>
+		<p>&nbsp;<p>
+		<h3 align="center"><i class="fas fa-lock"></i>&nbsp;비밀번호 확인</h3>
 		<hr />
-		<p>회원님의 소중한 정보 보호를 위해, 현재 비밀번호를 확인해주세요.</p>
+		<p align="center">회원님의 소중한 정보 보호를 위해, 현재 비밀번호를 확인해주세요.</p>
 		<br /><br /><br />
 		<form action="" method="post">
 			<div class="form-group">
