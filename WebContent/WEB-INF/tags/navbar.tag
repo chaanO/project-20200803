@@ -26,23 +26,24 @@
     <div class="navbar-nav">
       <c:if test="${not empty sessionScope.authUser }">
       
-         <a class="nav-link nav-item active" href="">${authUser.name }님</a>
+         <a class="nav-link nav-item active">${authUser.name }님</a>
          
-         <a class="nav-link nav-item active" href="${ctxPath }/logout.do">로그아웃</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/logout.do"><i class="fas fa-user"></i>&nbsp;로그아웃</a>
          
-         <a class="nav-link nav-item active" href="${ctxPath }/changeUser.do">회원정보 수정</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/list.do"><i class="fas fa-shopping-cart"></i>&nbsp;장바구니</a>
+
+         <a class="nav-link nav-item active" href="${ctxPath }/changeUser2.do"><i class="fas fa-users-cog"></i>&nbsp;계정관리</a>
          
-         <a class="nav-link nav-item active" href="${ctxPath }/article/list.do">고객센터</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/article/list.do"><i class="fas fa-question-circle"></i>&nbsp;고객센터</a>
          
-         <a class="nav-link nav-item active" href="${ctxPath }/list.do">장바구니</a>
       </c:if>
 
       <c:if test="${empty sessionScope.authUser }">
-         <a class="nav-link nav-item active" href="${ctxPath }/login.do">로그인</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/login.do"><i class="fas fa-user"></i>&nbsp;로그인</a>
          
-         <a class="nav-link nav-item active" href="${ctxPath }/join.do">회원가입</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/join.do"><i class="fas fa-clipboard-list"></i>&nbsp;회원가입</a>
          
-         <a class="nav-link nav-item active" href="${ctxPath }/article/list.do">고객센터</a>
+         <a class="nav-link nav-item active" href="${ctxPath }/article/list.do"><i class="fas fa-question-circle"></i>&nbsp;고객센터</a>
       </c:if>
    </div>
   </div>

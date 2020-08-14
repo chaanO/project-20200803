@@ -51,9 +51,9 @@ h5 {
 			<i class="fas fa-chevron-left"></i>
 		</button>
 			<br />
-		<h3>비밀번호 확인</h3>	
+		<h3>비밀번호 확인</h3>
 		<hr />
-		<p>회원님의 본인확인을 위해, 현재 비밀번호를 확인해주세요.</p>
+		<p>회원님의 소중한 정보 보호를 위해, 현재 비밀번호를 확인해주세요.</p>
 		<br /><br /><br />
 		<form action="" method="post">
 			<div class="form-group">

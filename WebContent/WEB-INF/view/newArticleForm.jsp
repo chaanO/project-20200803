@@ -25,14 +25,15 @@
 .container-fluid {
 	background-color: white;
 	width: 1000px;
+	
 }
 </style>
 </head>
 <body>
 <my:navbar />
 
-<h1><br />QnA게시판</h1>
 <div class="container-fluid" >
+<h3><br />문의 게시판</h3>
 
 	<form action="write.do" method="post">
 			<div class="form-group">

@@ -34,7 +34,6 @@ h5 {
 }
 </style>
 </head>
-<body>
 <body class="bg-light">
 
 	<div class="container-fluid shadow p-3">
