@@ -65,12 +65,6 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	width: 1300px;
 }
 
-.table
-
- {
-border: 5px solid;
-}
-
 </style>
 
 <script>
