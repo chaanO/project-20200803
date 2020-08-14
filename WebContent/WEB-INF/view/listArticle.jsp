@@ -162,5 +162,14 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 
 	</table>
 	</div>
+	
+	<!-- footer -->
+	<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white"><i class="fas fa-book-open"></i>&nbsp;CHOONGANG 중앙문고</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+	
 </body>
 </html>

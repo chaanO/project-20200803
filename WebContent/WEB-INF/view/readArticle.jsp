@@ -35,7 +35,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	height: 40px;
 	text-align: left;
 	box-sizing: border-box;
-	background-color: lightgrey;
+	background-color: #E9ECEF;
 }
 
 #ex2 {
@@ -56,7 +56,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 	width: 20px;
 	height: 500px;
 	text-align: left;
-	background-color: lightgrey;
+	background-color: #E9ECEF;
 	
 }
 
@@ -193,10 +193,21 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 							type="hidden" name="articleNo" value="${param.no }" /> <input
 							type="submit" class="btn btn-secondary" value="예" />
 					</form>
+					<br />
+					<br />
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<p>&nbsp; </p>
+
+	<!-- footer -->
+	<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white"><i class="fas fa-book-open"></i>&nbsp;CHOONGANG 중앙문고</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </body>
 </html>
