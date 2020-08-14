@@ -18,8 +18,10 @@
 <script
 	src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
 <link href="css/small-business.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <title>중앙문고</title>
 <style>
+body { font-family: 'Noto Sans KR', sans-serif; }
 	.portfolio-item {
 		margin-bottom: 30px;
 	}
