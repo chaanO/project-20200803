@@ -137,7 +137,7 @@
 	<!-- footer -->
 	<footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white"><i class="fas fa-book-open"></i>&nbsp;CHOOGANG 중앙문고</p>
+      <p class="m-0 text-center text-white"><i class="fas fa-book-open"></i>&nbsp;CHOONGANG 중앙문고</p>
     </div>
     <!-- /.container -->
   </footer>
