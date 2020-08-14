@@ -111,45 +111,5 @@
     </div>
   </div>
 </div>
-
-<%-- <div class="container">
-<form action="cart.do" method="post">
-<img src="${result[param.no].image }" height="200" style="float:left; margin-right: 20px; margin-top: 10px; margin-left:20px">
-	<div class="jumbotron">
-	  <h1 class="display-5">도서 구매</h1>
-	  <input type="hidden" name="bookId" value="${result[param.no].bookId }" />
-	  <p class="lead"><input type="hidden" name="bookName" value="${param.bookName }">제목 : ${result[param.no].bookName} </p>
-	  <p class="lead"><input type="hidden" name="price" value="${result[param.no].price}">가격 : ${result[param.no].price}원</p>
-	  <input type="hidden" name="memberId" value="${authUser.id }">
-	  <hr class="my-4">
-	  <div class="form-group">
-	    <label for="Amount">수량</label>
-	    <input type="text" name="amount" class="form-control" id="Amount" value="${param.amount }">
-      </div>
-	  <input type="submit" value="장바구니 담기">
-	  <input type="button" data-toggle="modal" data-target="#staticBackdrop" value="바로결제">
-	</div>
-</form>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">결제</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       	 결제 완료.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="location='main.jsp'">확인</button>
-      </div>
-    </div>
-  </div>
-</div> --%>
 </body>
 </html>
