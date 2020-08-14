@@ -11,7 +11,7 @@ import member.model.Member;
 public class ChangeUserService {
 	private MemberDao memberDao = new MemberDao();
 	
-	public void changeUser(String userId, String curPwd, String newPwd, String newPhone, String newAddr, String newEmail) {
+	public void changeUser(String userId, String newPwd, String newPhone, String newAddr, String newEmail) {
 		Connection conn = null;
 		
 		try {
@@ -22,9 +22,7 @@ public class ChangeUserService {
 			if (member == null) {
 				throw new MemberNotFoundException();
 			}
-			if (!member.matchPassword(curPwd)) {
-				throw new InvalidPasswordException();
-			}
+			
 			member.changeUser(newPwd, newPhone, newAddr, newEmail);
 			memberDao.update(conn, member);
 			conn.commit();

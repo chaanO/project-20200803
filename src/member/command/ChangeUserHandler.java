@@ -39,15 +39,13 @@ public class ChangeUserHandler implements CommandHandler{
 		Map<String, Boolean> errors = new HashMap<>();
 		req.setAttribute("errors", errors);
 		
-		String curPwd = req.getParameter("curPwd");
+		
 		String newPwd = req.getParameter("newPwd");
 		String newPhone = req.getParameter("newPhone");
 		String newAddr = req.getParameter("newAddr");
 		String newEmail = req.getParameter("newEmail");
 		
-		if (curPwd == null || curPwd.isEmpty()) {
-			errors.put("curPwd", Boolean.TRUE);
-		}
+		
 		if (newPwd == null || newPwd.isEmpty()) {
 			errors.put("newPwd", Boolean.TRUE);
 		}
@@ -65,7 +63,7 @@ public class ChangeUserHandler implements CommandHandler{
 		}
 		
 		try {
-			changeUserSvc.changeUser(user.getId(), curPwd, newPwd, newPhone, newAddr, newEmail);
+			changeUserSvc.changeUser(user.getId(), newPwd, newPhone, newAddr, newEmail);
 			return "/WEB-INF/view/changeUserSuccess.jsp";
 		} catch (InvalidPasswordException e) {
 			errors.put("badCurPwd", Boolean.TRUE);
