@@ -3,7 +3,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +34,8 @@ body { font-family: 'Noto Sans KR', sans-serif; } }
 </head>
 <body>
 <body class="bg-light">
-
+<my:navbar />
+	<br>
 <div class="container-fluid shadow p-3">
 	<button type="button" class="btn btn-default" aria-label="Left Align" onclick="location='main.jsp'">
   		<i class="fas fa-chevron-left"></i>

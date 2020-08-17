@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,15 +33,21 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 </head>
 
 <body class="bg-light">
-
+<my:navbar />
+	<br>
 <div class="container-fluid shadow p-3">
-
-<h1>중앙문고</h1>
-<h5>장바구니 담기 완료</h5>
-<form action="" method="post">
+<form method="post">
 	<div class="form-group">
+<p>&nbsp;</p>
+	  	<h1 align="center"><i class="fas fa-shopping-cart"></i></h1>
+		    <h4 align="center">장바구니 담기 완료</h4>
+		    <hr />
+		    <p align="center">회원님의 장바구니에 물품이 담겼습니다.</p>
+			<br>
+			<div align="center">	
 		<button type="button" class="btn btn-dark" onclick="location='${ctxPath}/list.do'">장바구니 확인</button>
-		<%-- <input type="button" class="btn btn-dark" onclick="location='${ctxPath}/list.do'" value="장바구니 확인" /> --%>
+		<button type="button" class="btn btn-dark" onclick="location='main.jsp'">쇼핑 계속하기</button>
+	</div>	
 	</div>
 </form>
 </div>

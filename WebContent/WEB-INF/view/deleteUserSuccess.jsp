@@ -34,7 +34,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 <div class="container-fluid shadow p-3">
    	<form>
 	  	<div class="form-group">
-	  	<p>&nbsp;<p>
+	  	<p>&nbsp;</p>
 	  	<h1 align="center"><i class="fas fa-user-slash"></i></h1>
 		    <h4 align="center">탈퇴 완료</h4>
 		    <hr />

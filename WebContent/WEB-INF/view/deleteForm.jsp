@@ -37,7 +37,8 @@ h5 {
 </style>
 </head>
 <body>
-
+<my:navbar />
+	<br>
 <div class="container-fluid shadow p-3">
 	<button type="button" class="btn btn-default" aria-label="Left Align"
 		onclick="location=''">

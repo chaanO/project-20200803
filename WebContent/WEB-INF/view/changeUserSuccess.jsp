@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,11 +28,16 @@ body { font-family: 'Noto Sans KR', sans-serif; }
 </style>
 </head>
 <body class="bg-light">
-
+<my:navbar />
+	<br>
 <div class="container-fluid shadow p-3">
    	<form>
 	  	<div class="form-group">
-		    <h4>회원정보 수정 완료.</h2>
+	  	<p>&nbsp;</p>
+	  	<h1 align="center"><i class="fas fa-user-edit"></i></h1>
+		    <h4 align="center">수정 완료</h4>
+		    <hr />
+		    <p align="center">회원정보 수정을 완료했습니다.</p>
 	  	</div>
 	  	<br />
 	  	<br />
